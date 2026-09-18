@@ -1,1074 +1,2142 @@
-<html>                                                                                                                                                                                                                                            
-<head>                                                                                                                                                                                                                                            
-<title> mimi shop </title>                                                                                                                                                                                                                                            
-<style>                                                                                                                                                                                                                                            
-body{                                                                                                                                                                                                                                            
-text-align:center;                                                                                                                                                                                                                                            
-font-family:Arial;                                                                                                                                                                                                                                       
-background-color: #fff5f8;                                                                                                                                                                                                                                         
-}                                                                                                                                                                                                                                            
-h1{                                                                                                                                                                                                                                            
-font-size:35px;                                                                                                                                                                                                                                        
-Color: #d6336c;                                                                                                                                                                                                                                          
-}                                                                                                                                                                                                                                            
-p{                                                                                                                                                                                                                                            
-font-size:20px;                                                                                                                                                                                                                                      
-}                                                                                                                                                                                                                                            
-button{                                                                                                                                                                                                                                            
-padding:12px 25px;                                                                                                                                                                                                                                            
-font-size:18px;                                                                                                                                                                                                                                      
-background-color: #d6336c;                                                                                                                                                                                                                                      
-color: white;                                                                                                                                                                                                                                      
-border: none;                                                                                                                                                                                                                                      
-border-radius: 10px;                                                                                                                                                                                                                                    
-cursor: pointer;                                                                                                                                                                                                                                            
-}                                                                                                                                                                                                                                            
-img{                                                                                                                                                                                                                                            
-width:250px;                                                                                                                                                                                                                                            
-border-radius:15px;                                                                                                                                                                                                                                            
-}                                                                                                                                                                                                                                            
-.products{                                                                                                                                                                                                                                  
-display: flex;                                                                                                                                                                                                                                
-justify-content:center;                                                                                                                                                                                                                                
-gap: 20px;                                                                                                                                                                                                                             
-}                                                                                                                                                                                                                              
-.product {                                                            
-    width: 300px;                                                            
-    margin: 30px auto;                                                            
-    padding: 20px;                                                            
-    background: white;                                                            
-    border-radius: 20px;                                                            
-    border: 1px solid #f3c4d5;                                                            
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);                                                            
-    transition: 0.3s;                                                            
-    position: relative;                                                            
-    overflow: hidden;                                                            
-}  .product:hover {                                                          
-transform: translateY(-8px);                                                          
-box-shadow: 0 10px 25px rgba(214,51,108,0.25);                                                          
-}                                                          
-.product img{                                                          
-width:100%;                                                          
-height:300px;                                                          
-object-fit:cover;                                                          
-border-radius:15px;                                                          
-}  .product h2{                                                          
-color:#d6336c;                                                          
-font-size:22px;                                                          
-}  .product p{                                                          
-font-size:18px;                                                          
-}  .product strong{                                                          
-display:block;                                                          
-color:#d6336c;                                                          
-font-size:22px;                                                          
-margin-top:8px;                                                          
-}  .product button{                                                          
-width:100%;                                                          
-font-size:17px;                                                          
-padding:12px;                                                          
-margin-top:10px;                                                          
-}                                                          
-.customer-box{                                                          
-width:300px;                                                          
-margin:40px auto;                                                          
-padding:25px;                                                          
-background-color:white;                                                          
-border-radius:20px;                                                          
-box-shadow:0 5px 15px rgba(0,0,0,0.1);                                                          
-}  .customer-box input,                                                          
-.customer-box textarea{                                                          
-width:90%;                                                          
-padding:12px;                                                          
-border:1px solid #ddd;                                                          
-border-radius:10px;                                                          
-font-size:16px;                                                          
-}  .customer-box textarea{                                                          
-height:100px;                                                          
-}                                                          
-.cart-box{                                                          
-width:90%;                                                          
-max-width:700px;                                                          
-margin:40px auto;                                                          
-padding:25px;                                                          
-background-color:white;                                                          
-border-radius:20px;                                                          
-box-shadow:0 5px 15px rgba(0,0,0,0.1);                                                          
-}  .cart-box h2{                                                          
-color:#d6336c;                                                          
-}  .cart-box div{                                                          
-margin:10px;                                                          
-padding:12px;                                                          
-border-bottom:1px solid #eee;                                                          
-}  .cart-box button{                                                          
-padding:6px 12px;                                                          
-margin:5px;                                                          
-font-size:14px;                                                          
-}                                                          
-.cart-box h3 {                                                          
-color: #d6336c;                                                          
-}  .cart-box span {                                                          
-font-size: 16px;                                                          
-font-weight: bold;                                                          
-}  .cart-box button {                                                          
-background-color: #d6336c;                                                          
-color: white;                                                          
-border: none;                                                          
-border-radius: 8px;                                                          
-}  .cart-box button:hover {                                                          
-background-color: #b52b5a;                                                          
-}                                                          
-#paymentBox {                                                          
-background-color: #fff0f5;                                                          
-padding: 20px;                                                          
-border-radius: 15px;                                                          
-border: 1px solid #f0c5d3;                                                          
-}                                                          
-.products {                                                          
-flex-wrap: wrap;                                                          
-}  .product {                                                          
-box-sizing: border-box;                                                          
-}                                                          
-.header{                                                          
-background-color:white;                                                          
-padding:20px;                                                          
-margin-bottom:30px;                                                          
-border-bottom:2px solid #f0c5d3;                                                          
-box-shadow:0 3px 10px rgba(0,0,0,0.08);                                                          
-}  .logo{                                                          
-font-size:28px;                                                          
-font-weight:bold;                                                          
-color:#d6336c;                                                          
-margin-bottom:15px;                                                          
-}  nav{                                                          
-display:flex;                                                          
-justify-content:center;                                                          
-gap:25px;                                                          
-flex-wrap:wrap;                                                          
-}  nav a{                                                          
-text-decoration:none;                                                          
-color:#555;                                                          
-font-size:18px;                                                          
-font-weight:bold;                                                          
-}  nav a:hover{                                                          
-color:#d6336c;                                                          
-}                                                          
-.contact-box{                                                          
-width:90%;                                                          
-max-width:700px;                                                          
-margin:40px auto;                                                          
-padding:30px;                                                          
-background-color:white;                                                          
-border-radius:20px;                                                          
-box-shadow:0 5px 15px rgba(0,0,0,0.1);                                                          
-}  .contact-box h2{                                                          
-color:#d6336c;                                                          
-}  .contact-box p{                                                          
-font-size:18px;                                                          
-color:#555;                                                          
-}                                                          
-@media (max-width: 600px) {  .products {                                                          
-flex-direction: column;                                                          
-align-items: center;                                                          
-}                                                          
-.product {                                                          
-width: 90%;                                                          
-max-width: 350px;                                                          
-}  img {                                                          
-width: 100%;                                                          
-max-width: 250px;                                                          
-}                                                          
-.customer-box {                                                          
-width: 90%;                                                          
-box-sizing: border-box;                                                          
-}  .cart-box {                                                          
-width: 90%;                                                          
-box-sizing: border-box;                                                          
-}  }                                                          
-.cart-item {                                                          
-background-color: #fff5f8;                                                          
-border: 1px solid #f3c4d5;                                                          
-border-radius: 15px;                                                          
-padding: 15px;                                                          
-margin: 15px 0;                                                          
-}  .cart-item .title {                                                          
-display: block;                                                          
-color: #d6336c;                                                          
-font-size: 19px;                                                          
-font-weight: bold;                                                          
-margin-bottom: 10px;                                                          
-}  .cart-item .price {                                                          
-display: block;                                                          
-color: #555;                                                          
-font-size: 16px;                                                          
-margin-bottom: 10px;                                                          
-}  .cart-item .quantity {                                                          
-display: inline-block;                                                          
-margin: 0 10px;                                                          
-font-size: 17px;                                                          
-font-weight: bold;                                                          
-}  .cart-item button {                                                          
-padding: 6px 12px;                                                          
-margin: 3px;                                                          
-font-size: 15px;                                                          
-}  .cart-item .delete {                                                          
-background-color: #888;                                                          
-}  .cart-total {                                                          
-margin-top: 20px;                                                          
-padding: 15px;                                                          
-background-color: #fff0f5;                                                          
-border-radius: 15px;                                                          
-color: #d6336c;                                                          
-font-size: 22px;                                                          
-font-weight: bold;                                                          
-}                                                          
-.cart-item {                                                          
-display: flex;                                                          
-align-items: center;                                                          
-gap: 15px;                                                          
-text-align: right;                                                          
-}  .cart-item img {                                                          
-width: 80px;                                                          
-height: 80px;                                                          
-object-fit: cover;                                                          
-border-radius: 12px;                                                          
-}  .cart-info {                                                          
-flex: 1;                                                          
-}                                                          
-.badge {                                                        
-    position: absolute;                                                        
-    top: 15px;                                                        
-    right: 15px;                                                        
-    background-color: #d6336c;                                                        
-    color: white;                                                        
-    padding: 8px 12px;                                                        
-    border-radius: 20px;                                                        
-    font-size: 14px;                                                        
-    font-weight: bold;                                                        
-    z-index: 2;                                                        
-}                                                     
-.favorite {                                                  
-    position: absolute;                                                  
-    top: 15px;                                                  
-    left: 15px;                                                  
-    width: 45px;                                                  
-    height: 45px;                                                  
-    padding: 0;                                                  
-    margin: 0;                                                  
-    background-color: white;                                                  
-    color: #d6336c;                                                  
-    border: 2px solid #f3c4d5;                                                  
-    border-radius: 50%;                                                  
-    font-size: 28px;                                                  
-    z-index: 3;                                                  
-}  .favorite:hover {                                                
-background-color: #fff0f5;                                                
-transform: scale(1.1);                                                
-}                                 
-.search-box {                              
-    width: 90%;                              
-    max-width: 600px;                              
-    margin: 30px auto;                              
-    display: flex;                              
-    gap: 10px;                              
-    justify-content: center;                              
-    flex-wrap: wrap;                              
-}  .search-box input {                            
-flex: 1;                            
-min-width: 250px;                            
-padding: 14px;                            
-border: 1px solid #f3c4d5;                            
-border-radius: 12px;                            
-font-size: 17px;                            
-text-align: right;                            
-}  .search-box select {                          
-padding: 14px;                          
-border: 1px solid #f3c4d5;                          
-border-radius: 12px;                          
-font-size: 16px;                          
-background-color: white;                          
-}  .no-result {                        
-width: 100%;                        
-font-size: 20px;                        
-color: #d6336c;                        
-padding: 30px;                        
-}                    
-/* پنجره جزئیات محصول */  .product-modal {              
-display: none;              
-position: fixed;              
-z-index: 9999;              
-left: 0;              
-top: 0;              
-width: 100%;              
-height: 100%;              
-background-color: rgba(0,0,0,0.6);              
-justify-content: center;              
-align-items: center;              
-padding: 20px;              
-box-sizing: border-box;              
-}  .product-modal-content {            
-background-color: white;            
-width: 90%;            
-max-width: 500px;            
-max-height: 90vh;            
-overflow-y: auto;            
-border-radius: 25px;            
-padding: 25px;            
-position: relative;            
-box-sizing: border-box;            
-}  .product-modal-content img {          
-width: 100%;          
-max-width: 350px;          
-height: 350px;          
-object-fit: cover;          
-border-radius: 20px;          
-}  .product-modal-content h2 {        
-color: #d6336c;        
-font-size: 26px;        
-}  .product-modal-content p {      
-color: #555;      
-line-height: 1.8;      
-}  .modal-price {    
-color: #d6336c;    
-font-size: 24px;    
-font-weight: bold;    
-}  .close-modal {  
-position: absolute;  
-top: 10px;  
-left: 10px;  
-width: 45px;  
-height: 45px;  
-padding: 0;  
-margin: 0;  
-background-color: #fff0f5;  
-color: #d6336c;  
-border: 2px solid #f3c4d5;  
-border-radius: 50%;  
-font-size: 25px;  
-}  .modal-select {
-width: 90%;
-padding: 12px;
-margin: 5px;
-border: 1px solid #f3c4d5;
-border-radius: 10px;
-font-size: 16px;
-}
-</style>  </head>  <body>  <header class="header">  <div class="logo">
-🌸 mimi shop  </div>    <nav>
-<a href="#">خانه</a>
-<a href="#products">محصولات</a>
-<a href="#cartBox">🛒 سبد خرید</a>
-<a href="#contact">تماس با ما</a>  </nav>  </header>  <h3 id="cart"> سبد خرید:0 محصول</h3>  <p id="total">مبلغ کل:0 تومان</p>
-<button onclick="document.querySelector('.cart-box').scrollIntoView({behavior:'smooth'})">
-🛒 مشاهده سبد خرید
-</button>  <h1>🌸mimi shop </h1>
-
-<p>بهترین مدل لباس زیر زنانه با کیفیت عالی</p>                                                                                                                                                                                                                                            
-<button onclick="document.querySelector('.products').scrollIntoView({behavior: 'smooth'})">                                                                                                                                                                
-خرید کنید                                                                                                                                                                
-</button>                                     
-<div class="search-box">  <input                                    
-    type="text"                                    
-    id="searchInput"                                    
-    placeholder="🔍 جستجوی محصول..."                                    
-    oninput="searchProducts()"                                    
->    <select id="sortProducts" onchange="sortProducts()">                                    
-    <option value="default">مرتب‌سازی محصولات</option>                                    
-    <option value="cheap">ارزان‌ترین</option>                                    
-    <option value="expensive">گران‌ترین</option>                                    
-</select>  </div>                           
-<div class="category-buttons">  <button onclick="filterProducts('all')">                          
-    همه محصولات                          
-</button>    <button onclick="filterProducts('sets')">                          
-    ست‌های زنانه                          
-</button>    <button onclick="filterProducts('sale')">                          
-    🔥 تخفیف‌دار                          
-</button>    <button onclick="filterProducts('new')">                          
-    🆕 جدیدها                          
-</button>  </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-<div class="products" id="products">                                   
-<div class="product sets sale">                                                      
-<div class="badge">🔥 12٪ تخفیف ویژه</div>                                                        
-<img src="product.jpg" alt="ست لباس زیر زنانه">  <button class="favorite" onclick="toggleFavorite(this)">♡</button>  <button class="details-btn" onclick="showProductDetails(this)">                    
-    👁️ مشاهده جزئیات                    
-</button>  <h2>ست لباس زیر زنانه</h2>                                                                               
-<label>سایز:</label>                                                                                  
-<select class="size">                                                                                  
-    <option>کوچک (S)</option>                                                                                  
-    <option>متوسط (M)</option>                                                                                  
-    <option>بزرگ (L)</option>                                                                                  
-    <option>خیلی بزرگ (XL)</option>                                                                                  
-</select>  <br><br>  <label>رنگ:</label>                                                                              
-<select class="color">  <option>مشکی</option>                                                                                
-<option>سفید</option>                                                                                
-<option>قرمز</option>                                                                                
-<option>صورتی</option>                                                                                
-</select>  <p>                                                                                                              
-<del>400,000 تومان</del>                                                                                                              
-<strong>350,000 تومان</strong>                                                                                                              
-</p>                                                                                  
-<button onclick="buyproductWithOptions(this, 'ست لباس زیر زنانه', 350000)">                                                                                                             
-خرید محصول                                                                                                              
-</button>  </div>  <div class="product sets">  <img src="product3.jpg" alt="لباس زیر زنانه">                                              
-<button class="favorite" onclick="toggleFavorite(this)">♡</button>                    
-<button class="details-btn" onclick="showProductDetails(this)">                    
-    👁️ مشاهده جزئیات                    
-</button>                                                                              
- <h2>ست شیک زنانه</h2>  <label>سایز:</label>                                                                          
-<select class="size">                                                                          
-<option>کوچک (S)</option>                                                                          
-<option>متوسط (M)</option>                                                                          
-<option>بزرگ (L)</option>                                                                          
-<option>خیلی بزرگ (XL)</option>                                                                          
-</select>  <br><br>  <label>رنگ:</label>                                                                      
-<select class="color">  <option>مشکی</option>                                                                          
-<option>سفید</option>                                                                          
-<option>قرمز</option>                                                                          
-<option>صورتی</option>                                                                          
-</select>  <p>قیمت: 520,000 تومان</p>  <button onclick="buyproductWithOptions(this, 'ست شیک زنانه', 520000)">                                                                            
-    خرید محصول                                                                            
-</button>                                                                                                                                            
-</div>  <div class="product sets new">  <img src="product2.jpg" alt="لباس زیر زنانه">                                               
-<button class="favorite" onclick="toggleFavorite(this)">♡</button>                    
-<button class="details-btn" onclick="showProductDetails(this)">                    
-    👁️ مشاهده جزئیات                    
-</button>                                                                        
-<h2>ست جدید زنانه</h2>  <label>سایز:</label>                                                                        
-<select class="size">                                                                        
-<option>کوچک (S)</option>                                                                        
-<option>متوسط (M)</option>                                                                        
-<option>بزرگ (L)</option>                                                                        
-<option>خیلی بزرگ (XL)</option>                                                                        
-</select>  <br><br>  <label>رنگ:</label>                                                                    
-<select class="color">  <option>مشکی</option>                                                                        
-<option>سفید</option>                                                                        
-<option>قرمز</option>                                                                        
-<option>صورتی</option>                                                                        
-</select>  <p>قیمت: 450,000 تومان</p>  <button onclick="buyproductWithOptions(this, 'ست جدید زنانه', 450000)">                                                                          
-    خرید محصول                                                                          
-</button>                                                                                                         
-</div>  </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<div class="cart-box" id="cartBox">  <h2>🛒 سبد خرید</h2>    <div id="cartItems"></div>    <div class="cart-total">                        
-    مبلغ کل:                        
-    <span id="cartTotal">۰ تومان</span>                        
-</div>    <button onclick="clearCart()">                        
-    🗑️ خالی کردن سبد                        
-</button>  </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-<div class="customer-box">  <h2>اطلاعات مشتری</h2>    <input type="text" id="customerName" placeholder="نام و نام خانوادگی">    <br><br>  <input type="tel" id="customerPhone" placeholder="شماره موبایل">    <br><br>  <textarea id="customerAddress" placeholder="آدرس کامل"></textarea>    <br><br>                                                                                                                                                                         
-<h3>روش پرداخت</h3>  <label>                                                                                                                                                                        
-    <input type="radio" name="payment" value="online">                                                                                                                                                                        
-    پرداخت آنلاین                                                                                                                                                                        
-</label>  <br><br>  <label>                                                                                                                                                                        
-    <input type="radio" name="payment" value="cash">                                                                                                                                                                        
-    پرداخت در محل                                                                                                                                                                        
-</label>  <br><br> <button onclick="submitOrder()">ثبت سفارش</button>                                                                                                                                                             
-<div id="paymentBox" style="display:none; margin-top:20px;">  <h3>پرداخت آنلاین</h3>    <p>مبلغ قابل پرداخت:</p>    <strong id="paymentAmount"></strong>  <br><br>  <button onclick="payNow()">                      
-    پرداخت                      
-</button>  </div>                                                                                                              </div>                                                                                                                          
-<div class="contact-box" id="contact">  <h2>📞 تماس با ما</h2>    <p>برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸</p>    <p>📱 تلفن: 09917895945</p>    <p>💬 واتساپ: پاسخگویی به سفارش‌ها</p>    <button onclick="window.open('https://wa.me/989917895945','_blank')">                                                                                                                          
-    پیام در واتساپ                                                                                                                          
-</button>  </div>                    
-<div class="product-modal" id="productModal">  <div class="product-modal-content">    <button class="close-modal" onclick="closeProductDetails()">                
-    ×                
-</button>      <img id="modalImage" src="" alt="محصول">      <h2 id="modalTitle"></h2>      <p id="modalDescription"></p>      <div class="modal-price" id="modalPrice"></div>      <br>      <label>سایز:</label>  <select class="modal-select" id="modalSize">                
-    <option>کوچک (S)</option>                
-    <option>متوسط (M)</option>                
-    <option>بزرگ (L)</option>                
-    <option>خیلی بزرگ (XL)</option>                
-</select>      <br>      <label>رنگ:</label>  <select class="modal-select" id="modalColor">                
-    <option>مشکی</option>                
-    <option>سفید</option>                
-    <option>قرمز</option>                
-    <option>صورتی</option>                
-</select>      <br><br>  <button onclick="addModalProductToCart()">                
-    🛒 افزودن به سبد خرید                
-</button>  </div>  </div>                                                                                                                                             
-<script>                                                                                                  
-let cart = JSON.parse(localStorage.getItem("cart")) || [];                                                                                                  
-let totalPrice = 0;                                            
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];                                                                                                                                      
-function buyproduct(name, price) {  let product = cart.find(item => item.name === name);  if (product) {                                                                                                                                          
-product.quantity++;                                                                                                                                          
-} else {                                                                                                                                          
-cart.push({                                                                                                                                          
-name: name,                                                                                                                                          
-price: price,                                                                                                                                          
-quantity: 1                                                                                                                                          
-});                                                                                                                                          
-}  updateCart();                                                                                                    
-localStorage.setItem("cart", JSON.stringify(cart));                                                                                                    
-alert("محصول به سبد خرید اضافه شد 🌸");  }                                                                               
-function buyproductWithOptions(button, name, price) {  let productBox = button.parentElement;    let size = productBox.querySelector(".size").value;                                                            
-let color = productBox.querySelector(".color").value;  let image = productBox.querySelector("img").src;  let productName =                                                        
-name +                                                        
-" | سایز: " +                                                        
-size +                                                        
-" | رنگ: " +                                                        
-color;  let product = cart.find(item => item.name === productName);  if (product) {  product.quantity++;  } else {  cart.push({                                              
-name: productName,                                              
-price: price,                                              
-quantity: 1,                                              
-image: image                                              
-});  }  updateCart();  localStorage.setItem(                                        
-"cart",                                        
-JSON.stringify(cart)                                        
-);  alert("محصول به سبد خرید اضافه شد 🌸");  }                                    
-function updateCart() {  let cartItems = document.getElementById("cartItems");  cartItems.innerHTML = "";  let cartCount = 0;  totalPrice = 0;  if (cart.length === 0) {  cartItems.innerHTML =                        
-"<p>🛒 سبد خرید شما خالی است 🌸</p>";  }  cart.forEach(function(product, index) {  cartCount += product.quantity;  totalPrice += product.price * product.quantity;  let item = document.createElement("div");  item.className = "cart-item";  // عکس محصول          
-if (product.image) {  let image = document.createElement("img");  image.src = product.image;  image.alt = product.name;  item.appendChild(image);  }
-
-// اطلاعات محصول
-let info = document.createElement("div");
-
-info.className = "cart-info";
-
-// نام محصول
-let title = document.createElement("span");
-
-title.className = "title";
-
-title.innerText = product.name;
-
-info.appendChild(title);
-
-// قیمت
-let price = document.createElement("span");
-
-price.className = "price";
-
-price.innerText =
-"قیمت: " +
-product.price.toLocaleString() +
-" تومان";
-
-info.appendChild(price);
-
-// دکمه کم کردن
-let minus = document.createElement("button");
-
-minus.innerText = "−";
-
-minus.onclick = function() {
-
-if (product.quantity > 1) {
-
-product.quantity--;
-
-} else {
-
-cart.splice(index, 1);
-
-}
-
-updateCart();
-
-};
-
-info.appendChild(minus);
-
-// تعداد
-let number = document.createElement("span");
-
-number.className = "quantity";
-
-number.innerText = product.quantity;
-
-info.appendChild(number);
-
-// دکمه اضافه کردن
-let plus = document.createElement("button");
-
-plus.innerText = "+";
-
-plus.onclick = function() {
-
-product.quantity++;
-
-updateCart();
-
-};
-
-info.appendChild(plus);
-
-// دکمه حذف
-let deleteButton = document.createElement("button");
-
-deleteButton.className = "delete";
-
-deleteButton.innerText = "🗑️ حذف";
-
-deleteButton.onclick = function() {
-
-cart.splice(index, 1);
-
-updateCart();
-
-};
-
-info.appendChild(deleteButton);
-
-// اضافه کردن اطلاعات به آیتم
-item.appendChild(info);
-
-// اضافه کردن آیتم به سبد خرید
-cartItems.appendChild(item);
-
-});
-
-// ذخیره سبد خرید
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-// تعداد محصولات
-document.getElementById("cart").innerText =
-"سبد خرید: " + cartCount + " محصول";
-
-// مبلغ کل بالای سایت
-document.getElementById("total").innerText =
-"مبلغ کل: " +
-totalPrice.toLocaleString() +
-" تومان";
-
-// مبلغ کل داخل سبد
-document.getElementById("cartTotal").innerText =
-totalPrice.toLocaleString() +
-" تومان";
-
-}
-function clearCart() {
-
-if (cart.length === 0) {
-alert("سبد خرید از قبل خالی است 🌸");
-return;
-}
-
-let confirmClear = confirm(
-"آیا مطمئنی می‌خواهی سبد خرید را خالی کنی؟"
-);
-
-if (confirmClear) {
-
-cart = [];
-
-localStorage.removeItem("cart");
-
-updateCart();
-
-alert("سبد خرید خالی شد 🌸");
-
-}
-
-}
-function submitOrder() {
-
-let name = document.getElementById("customerName").value.trim();
-let phone = document.getElementById("customerPhone").value.trim();
-let address = document.getElementById("customerAddress").value.trim();
-let payment = document.querySelector('input[name="payment"]:checked');
-
-let cartCount = cart.reduce(
-(sum, product) => sum + product.quantity,
-0
-);
-
-// بررسی سبد خرید
-if (cartCount === 0) {
-alert("🛒 لطفاً ابتدا یک محصول به سبد خرید اضافه کنید");
-return;
-}
-
-// بررسی اطلاعات مشتری
-if (name === "" || phone === "" || address === "") {
-alert("⚠️ لطفاً نام، شماره تماس و آدرس را کامل وارد کنید");
-return;
-}
-
-// بررسی روش پرداخت
-if (!payment) {
-alert("💳 لطفاً روش پرداخت را انتخاب کنید");
-return;
-}
-
-// ساخت پیام سفارش
-let orderText =
-"🌸 سلام، سفارش جدید از mimi shop\n\n";
-
-orderText += "👤 نام مشتری: " + name + "\n";
-orderText += "📱 شماره تماس: " + phone + "\n";
-orderText += "📍 آدرس: " + address + "\n\n";
-
-orderText += "🛍️ جزئیات سفارش:\n";
-orderText += "━━━━━━━━━━━━━━\n";
-
-cart.forEach(function(product) {
-
-orderText +=
-"🌸 " + product.name + "\n";
-
-orderText +=
-"تعداد: " + product.quantity + "\n";
-
-orderText +=
-"قیمت واحد: " +
-product.price.toLocaleString() +
-" تومان\n";
-
-orderText +=
-"مبلغ: " +
-(product.price * product.quantity).toLocaleString() +
-" تومان\n";
-
-orderText += "━━━━━━━━━━━━━━\n";
-
-});
-
-// مبلغ نهایی
-orderText +=
-"\n💰 مبلغ نهایی: " +
-totalPrice.toLocaleString() +
-" تومان\n";
-
-// روش پرداخت
-if (payment.value === "cash") {
-
-orderText +=
-"💵 روش پرداخت: پرداخت در محل";
-
-} else {
-
-orderText +=
-"💳 روش پرداخت: پرداخت آنلاین";
-
-}
-
-// نمایش بخش پرداخت آنلاین
-if (payment.value === "online") {
-
-document.getElementById("paymentBox").style.display = "block";
-
-document.getElementById("paymentAmount").innerText =
-totalPrice.toLocaleString() + " تومان";
-
-} else {
-
-document.getElementById("paymentBox").style.display = "none";
-
-}
-
-// شماره واتساپ فروشگاه
-let whatsappNumber = "989917895945";
-
-let whatsappURL =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(orderText);
-
-// باز کردن واتساپ
-window.open(whatsappURL, "_blank");
-
-}
-function payNow() {
-
-if (totalPrice === 0) {
-alert("سبد خرید شما خالی است 🌸");
-return;
-}
-
-alert(
-"درگاه پرداخت آماده اتصال است 🌸\n\n" +
-"مبلغ سفارش: " +
-totalPrice.toLocaleString() +
-" تومان"
-);
-
-}
-function toggleFavorite(button) {
-
-let productBox = button.parentElement;
-let productName = productBox.querySelector("h2").innerText;
-
-if (favorites.includes(productName)) {
-
-favorites = favorites.filter(item => item !== productName);
-
-button.innerText = "♡";
-button.style.backgroundColor = "white";
-button.style.color = "#d6336c";
-
-alert("محصول از علاقه‌مندی‌ها حذف شد");
-
-} else {
-
-favorites.push(productName);
-
-button.innerText = "♥";
-button.style.backgroundColor = "#d6336c";
-button.style.color = "white";
-
-alert("محصول به علاقه‌مندی‌ها اضافه شد ❤️");
-
-}
-
-localStorage.setItem("favorites", JSON.stringify(favorites));
-
-}
-function loadFavorites() {
-
-let favoriteButtons = document.querySelectorAll(".favorite");
-
-favoriteButtons.forEach(function(button) {
-
-let productName =
-button.parentElement.querySelector("h2").innerText;
-
-if (favorites.includes(productName)) {
-
-button.innerText = "♥";
-button.style.backgroundColor = "#d6336c";
-button.style.color = "white";
-
-}
-
-});
-
-}
-function searchProducts() {
-
-let searchText =
-document.getElementById("searchInput").value.toLowerCase();
-
-let products =
-document.querySelectorAll(".product");
-
-let found = 0;
-
-products.forEach(function(product) {
-
-let name =
-product.querySelector("h2").innerText.toLowerCase();
-
-if (name.includes(searchText)) {
-
-product.style.display = "block";
-found++;
-
-} else {
-
-product.style.display = "none";
-
-}
-
-});
-
-let oldMessage =
-document.querySelector(".no-result");
-
-if (oldMessage) {
-oldMessage.remove();
-}
-
-if (found === 0) {
-
-let message =
-document.createElement("p");
-
-message.className = "no-result";
-
-message.innerText =
-"😔 محصولی پیدا نشد";
-
-document
-.getElementById("products")
-.appendChild(message);
-
-}
-
-}
-
-function sortProducts() {
-
-let productsBox = document.getElementById("products");
-
-let products = Array.from(
-productsBox.querySelectorAll(".product")
-);
-
-let sortType =
-document.getElementById("sortProducts").value;
-
-products.sort(function(a, b) {
-
-let priceA = getProductPrice(a);
-let priceB = getProductPrice(b);
-
-if (sortType === "cheap") {
-return priceA - priceB;
-}
-
-if (sortType === "expensive") {
-return priceB - priceA;
-}
-
-return 0;
-
-});
-
-products.forEach(function(product) {
-productsBox.appendChild(product);
-});
-
-}
-
-function getProductPrice(product) {
-
-let priceElement =
-product.querySelector("strong") ||
-product.querySelector("p");
-
-let priceText =
-priceElement.innerText;
-
-return parseInt(
-priceText.replace(/[^0-9]/g, "")
-);
-
-}
-function filterProducts(category) {
-
-let products =
-document.querySelectorAll(".product");
-
-products.forEach(function(product) {
-
-if (
-category === "all" ||
-product.classList.contains(category)
-) {
-
-product.style.display = "block";
-
-} else {
-
-product.style.display = "none";
-
-}
-
-});
-
-}
-let selectedModalProduct = {};
-
-function showProductDetails(button) {
-
-let productBox = button.parentElement;
-
-let title =
-productBox.querySelector("h2").innerText;
-
-let image =
-productBox.querySelector("img").src;
-
-let priceElement =
-productBox.querySelector("strong") ||
-productBox.querySelector("p");
-
-let priceText =
-priceElement.innerText;
-
-let price =
-parseInt(
-priceText.replace(/[^0-9]/g, "")
-);
-
-selectedModalProduct = {
-name: title,
-image: image,
-price: price
-};
-
-document.getElementById("modalImage").src = image;
-
-document.getElementById("modalTitle").innerText =
-title;
-
-document.getElementById("modalPrice").innerText =
-price.toLocaleString() + " تومان";
-
-document.getElementById("modalDescription").innerText =
-"این محصول با کیفیت عالی و طراحی زیبا برای استفاده روزمره و راحتی شما آماده شده است. 🌸";
-
-document.getElementById("productModal").style.display =
-"flex";
-
-}
-
-function closeProductDetails() {
-
-document.getElementById("productModal").style.display =
-"none";
-
-}
-document.getElementById("productModal").addEventListener("click", function(event) {
-
-if (event.target === this) {
-closeProductDetails();
-}
-
-});
-
-function addModalProductToCart() {
-
-let size =
-document.getElementById("modalSize").value;
-
-let color =
-document.getElementById("modalColor").value;
-
-let productName =
-selectedModalProduct.name +
-" | سایز: " +
-size +
-" | رنگ: " +
-color;
-
-let product =
-cart.find(item => item.name === productName);
-
-if (product) {
-
-product.quantity++;
-
-} else {
-
-cart.push({
-
-name: productName,
-
-price: selectedModalProduct.price,
-
-quantity: 1,
-
-image: selectedModalProduct.image
-
-});
-
-}
-
-updateCart();
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-alert("محصول با موفقیت به سبد خرید اضافه شد 🌸");
-
-closeProductDetails();
-
-}
-loadFavorites();
-updateCart();
-
-</script>   </body>  </html>
+<!DOCTYPE html>  <html lang="fa" dir="rtl">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>mimi shop</title>  <style>  
+  
+*{  
+box-sizing:border-box;  
+}  
+  
+body{  
+margin:0;  
+text-align:center;  
+font-family:Arial,sans-serif;  
+background-color:#fff5f8;  
+color:#333;  
+}  
+  
+h1{  
+font-size:35px;  
+color:#d6336c;  
+}  
+  
+button{  
+padding:12px 25px;  
+font-size:18px;  
+background-color:#d6336c;  
+color:white;  
+border:none;  
+border-radius:10px;  
+cursor:pointer;  
+transition:.3s;  
+}  
+  
+button:hover{  
+background-color:#b52b5a;  
+transform:translateY(-2px);  
+}  
+  
+img{  
+width:250px;  
+border-radius:15px;  
+}  
+  
+/* ===== HEADER ===== */  
+  
+header{  
+background:white;  
+padding:18px 25px;  
+display:flex;  
+align-items:center;  
+justify-content:space-between;  
+gap:20px;  
+border-bottom:1px solid #f3c4d5;  
+box-shadow:0 4px 20px rgba(214,51,108,.08);  
+position:sticky;  
+top:0;  
+z-index:1000;  
+}  
+  
+.logo{  
+font-size:25px;  
+font-weight:bold;  
+color:#d6336c;  
+white-space:nowrap;  
+}  
+  
+nav{  
+display:flex;  
+align-items:center;  
+gap:10px;  
+flex-wrap:wrap;  
+justify-content:center;  
+}  
+  
+nav a{  
+text-decoration:none;  
+color:#555;  
+font-weight:bold;  
+padding:9px 14px;  
+border-radius:20px;  
+}  
+  
+nav a:hover{  
+background:#fff0f5;  
+color:#d6336c;  
+}  
+  
+/* ===== HERO ===== */  
+  
+.hero{  
+width:90%;  
+max-width:1100px;  
+margin:35px auto;  
+padding:55px 35px;  
+border-radius:30px;  
+background:linear-gradient(135deg,#fff0f5,#fff);  
+border:1px solid #f3c4d5;  
+box-shadow:0 15px 40px rgba(214,51,108,.12);  
+}  
+  
+.hero-content{  
+display:flex;  
+align-items:center;  
+justify-content:space-between;  
+gap:30px;  
+}  
+  
+.hero-text{  
+flex:1;  
+text-align:right;  
+}  
+  
+.hero-badge{  
+display:inline-block;  
+padding:8px 16px;  
+background:white;  
+color:#d6336c;  
+border:1px solid #f3c4d5;  
+border-radius:30px;  
+font-size:14px;  
+font-weight:bold;  
+}  
+  
+.hero h1{  
+font-size:42px;  
+line-height:1.5;  
+margin:15px 0;  
+}  
+  
+.hero h1 span{  
+color:#d6336c;  
+}  
+  
+.hero-text p{  
+color:#666;  
+font-size:19px;  
+line-height:2;  
+}  
+  
+.hero-buttons{  
+display:flex;  
+gap:12px;  
+margin-top:25px;  
+flex-wrap:wrap;  
+}  
+  
+.hero-buttons button{  
+min-width:170px;  
+}  
+  
+.hero-cart{  
+background:white;  
+color:#d6336c;  
+border:2px solid #d6336c;  
+}  
+  
+.hero-decoration{  
+width:280px;  
+height:280px;  
+border-radius:50%;  
+background:white;  
+border:10px solid #fff0f5;  
+box-shadow:0 10px 30px rgba(214,51,108,.12);  
+display:flex;  
+flex-direction:column;  
+align-items:center;  
+justify-content:center;  
+color:#d6336c;  
+font-size:55px;  
+}  
+  
+.hero-decoration div{  
+font-size:25px;  
+font-weight:bold;  
+}  
+  
+/* ===== STATUS ===== */  
+  
+.shop-status{  
+width:90%;  
+max-width:900px;  
+margin:25px auto 45px;  
+display:flex;  
+justify-content:center;  
+gap:20px;  
+flex-wrap:wrap;  
+}  
+  
+.shop-status div{  
+background:white;  
+border:1px solid #f3c4d5;  
+border-radius:18px;  
+padding:15px 30px;  
+min-width:180px;  
+box-shadow:0 5px 18px rgba(0,0,0,.06);  
+}  
+  
+.shop-status strong{  
+color:#d6336c;  
+font-size:18px;  
+}  
+  
+.shop-status span{  
+color:#777;  
+font-size:14px;  
+}  
+  
+/* ===== SEARCH ===== */  
+  
+.search-box{  
+width:90%;  
+max-width:600px;  
+margin:30px auto;  
+display:flex;  
+gap:10px;  
+justify-content:center;  
+flex-wrap:wrap;  
+}  
+  
+.search-box input,  
+.search-box select{  
+padding:14px;  
+border:1px solid #f3c4d5;  
+border-radius:12px;  
+font-size:16px;  
+background:white;  
+}  
+  
+.search-box input{  
+flex:1;  
+min-width:250px;  
+text-align:right;  
+}  
+  
+/* ===== PRODUCTS ===== */  
+  
+.products-section-title{  
+width:90%;  
+max-width:1100px;  
+margin:50px auto 20px;  
+}  
+  
+.products-section-title h2{  
+color:#d6336c;  
+font-size:32px;  
+}  
+  
+.products-section-title p{  
+color:#777;  
+font-size:17px;  
+}  
+  
+.category-buttons{  
+width:90%;  
+max-width:1000px;  
+margin:20px auto 35px;  
+display:flex;  
+justify-content:center;  
+gap:10px;  
+flex-wrap:wrap;  
+}  
+  
+.category-buttons button{  
+min-width:120px;  
+padding:10px 18px;  
+font-size:15px;  
+background:white;  
+color:#d6336c;  
+border:1px solid #d6336c;  
+border-radius:25px;  
+}  
+  
+.category-buttons button:hover{  
+background:#d6336c;  
+color:white;  
+}  
+  
+.products{  
+display:flex;  
+justify-content:center;  
+gap:20px;  
+flex-wrap:wrap;  
+}  
+  
+.product{  
+width:300px;  
+margin:30px auto;  
+padding:20px;  
+background:white;  
+border-radius:20px;  
+border:1px solid #f3c4d5;  
+box-shadow:0 5px 15px rgba(0,0,0,.1);  
+transition:.3s;  
+position:relative;  
+overflow:hidden;  
+}  
+  
+.product:hover{  
+transform:translateY(-8px);  
+box-shadow:0 15px 35px rgba(214,51,108,.18);  
+}  
+  
+.product img{  
+width:100%;  
+height:300px;  
+object-fit:cover;  
+border-radius:15px;  
+}  
+  
+.product h2{  
+color:#d6336c;  
+font-size:22px;  
+margin-top:18px;  
+}  
+  
+.product select{  
+width:90%;  
+padding:11px;  
+margin-top:7px;  
+border:1px solid #f3c4d5;  
+border-radius:10px;  
+background:white;  
+font-size:15px;  
+}  
+  
+.product strong{  
+display:block;  
+color:#d6336c;  
+font-size:23px;  
+margin:10px 0;  
+}  
+  
+.product del{  
+color:#999;  
+font-size:15px;  
+}  
+  
+.product > button:last-child{  
+width:100%;  
+background:linear-gradient(135deg,#d6336c,#e85d8a);  
+}  
+  
+.badge{  
+position:absolute;  
+top:15px;  
+right:15px;  
+background:#d6336c;  
+color:white;  
+padding:8px 12px;  
+border-radius:20px;  
+font-size:14px;  
+font-weight:bold;  
+z-index:2;  
+}  
+  
+.favorite{  
+position:absolute;  
+top:15px;  
+left:15px;  
+width:45px;  
+height:45px;  
+padding:0;  
+background:white;  
+color:#d6336c;  
+border:2px solid #f3c4d5;  
+border-radius:50%;  
+font-size:28px;  
+z-index:3;  
+}  
+  
+.details-btn{  
+width:100%;  
+background:white !important;  
+color:#d6336c !important;  
+border:1px solid #d6336c !important;  
+margin-top:10px;  
+}  
+  
+/* ===== CART ===== */  
+  
+.cart-box{  
+width:90%;  
+max-width:800px;  
+margin:40px auto;  
+padding:20px;  
+background:white;  
+border:1px solid #f3c4d5;  
+border-radius:18px;  
+box-shadow:0 8px 25px rgba(214,51,108,.1);  
+}  
+  
+.cart-box h2{  
+color:#d6336c;  
+}  
+  
+.cart-item{  
+display:flex;  
+align-items:center;  
+gap:15px;  
+padding:15px;  
+margin-bottom:15px;  
+background:#fff5f8;  
+border:1px solid #f3c4d5;  
+border-radius:15px;  
+}  
+  
+.cart-item img{  
+width:90px;  
+height:90px;  
+object-fit:cover;  
+border-radius:12px;  
+}  
+  
+.cart-info{  
+flex:1;  
+text-align:right;  
+}  
+  
+.cart-info strong{  
+display:block;  
+font-size:17px;  
+margin-bottom:8px;  
+}  
+  
+.cart-info p{  
+margin:5px 0;  
+color:#666;  
+}  
+  
+.cart-info button{  
+padding:6px 12px;  
+margin:3px;  
+font-size:15px;  
+}  
+  
+.delete{  
+background:#888 !important;  
+}  
+  
+.cart-total{  
+margin-top:20px;  
+padding:15px;  
+background:#fff0f5;  
+border-radius:12px;  
+color:#d6336c;  
+font-size:20px;  
+font-weight:bold;  
+}  
+  
+/* ===== CUSTOMER ===== */  
+  
+.customer-box{  
+width:90%;  
+max-width:700px;  
+margin:40px auto;  
+padding:25px;  
+background:white;  
+border-radius:20px;  
+box-shadow:0 5px 15px rgba(0,0,0,.1);  
+}  
+  
+.customer-box input,  
+.customer-box textarea{  
+width:90%;  
+padding:12px;  
+border:1px solid #ddd;  
+border-radius:10px;  
+font-size:16px;  
+}  
+  
+.customer-box textarea{  
+height:100px;  
+}  
+  
+#paymentBox{  
+background:#fff0f5;  
+padding:20px;  
+border-radius:15px;  
+border:1px solid #f0c5d3;  
+margin-top:20px;  
+}  
+  
+/* ===== CONTACT ===== */  
+  
+.contact-box{  
+width:90%;  
+max-width:700px;  
+margin:40px auto;  
+padding:30px;  
+background:white;  
+border-radius:20px;  
+box-shadow:0 5px 15px rgba(0,0,0,.1);  
+}  
+  
+.contact-box h2{  
+color:#d6336c;  
+}  
+  
+/* ===== MODAL ===== */  
+  
+.product-modal{  
+display:none;  
+position:fixed;  
+z-index:9999;  
+left:0;  
+top:0;  
+width:100%;  
+height:100%;  
+background:rgba(0,0,0,.6);  
+justify-content:center;  
+align-items:center;  
+padding:20px;  
+}  
+  
+.product-modal-content{  
+background:white;  
+width:90%;  
+max-width:500px;  
+max-height:90vh;  
+overflow-y:auto;  
+border-radius:25px;  
+padding:25px;  
+position:relative;  
+}  
+  
+.product-modal-content img{  
+width:100%;  
+max-width:350px;  
+height:350px;  
+object-fit:cover;  
+border-radius:20px;  
+}  
+  
+.modal-price{  
+color:#d6336c;  
+font-size:24px;  
+font-weight:bold;  
+}  
+  
+.close-modal{  
+position:absolute;  
+top:10px;  
+left:10px;  
+width:45px;  
+height:45px;  
+padding:0;  
+background:#fff0f5;  
+color:#d6336c;  
+border:2px solid #f3c4d5;  
+border-radius:50%;  
+font-size:25px;  
+}  
+  
+/* ===== NO RESULT ===== */  
+  
+.no-result{  
+width:100%;  
+font-size:20px;  
+color:#d6336c;  
+padding:30px;  
+}  
+  
+/* ===== MOBILE ===== */  
+  
+@media(max-width:600px){  
+  
+header{  
+flex-direction:column;  
+}  
+  
+nav{  
+width:100%;  
+}  
+  
+nav a{  
+font-size:14px;  
+padding:7px 10px;  
+}  
+  
+.hero{  
+padding:35px 20px;  
+}  
+  
+.hero-content{  
+flex-direction:column;  
+}  
+  
+.hero-text{  
+text-align:center;  
+}  
+  
+.hero h1{  
+font-size:30px;  
+}  
+  
+.hero-decoration{  
+width:190px;  
+height:190px;  
+font-size:40px;  
+}  
+  
+.product{  
+width:90%;  
+max-width:350px;  
+}  
+  
+.cart-item{  
+flex-direction:column;  
+text-align:center;  
+}  
+  
+.cart-info{  
+text-align:center;  
+width:100%;  
+}  
+  
+.customer-box{  
+width:90%;  
+}  
+  
+}  
+  
+/* ===== ORDER SUCCESS ===== */  
+  
+.order-success{  
+display:none;  
+width:90%;  
+max-width:700px;  
+margin:30px auto;  
+padding:25px;  
+background:#f0fff4;  
+border:1px solid #b7e4c7;  
+border-radius:20px;  
+color:#257942;  
+}  
+  
+</style>  </head>  <body>  <header>  <div class="logo">  
+🌸 mimi shop  
+</div>  <nav>  
+<a href="#">🏠 خانه</a>  
+<a href="#products">🛍️ محصولات</a>  
+<a href="#cartBox">🛒 سبد خرید</a>  
+<a href="#contact">📞 تماس با ما</a>  
+</nav>  </header>  <section class="hero">  <div class="hero-content">  <div class="hero-text">  <span class="hero-badge">  
+🌸 فروشگاه آنلاین لباس زیر زنانه  
+</span>  <h1>  
+به دنیای زیبای  
+<span>mimi shop</span>  
+خوش آمدید 💕  
+</h1>  <p>  
+جدیدترین مدل‌های لباس زیر زنانه  
+با کیفیت عالی و طراحی زیبا  
+</p>  <div class="hero-buttons">  <button onclick="scrollToProducts()">  
+🛍️ مشاهده محصولات  
+</button>  <button class="hero-cart" onclick="scrollToCart()">  
+🛒 سبد خرید  
+</button>  </div>  </div>  <div class="hero-decoration">  🌸
+
+<div>mimi shop</div>  💕
+
+</div>  </div>  </section>  <div class="shop-status">  <div>  
+🛒  
+<strong id="cart">0</strong>  
+<span>محصول در سبد</span>  
+</div>  <div>  
+💰  
+<strong id="total">0 تومان</strong>  
+<span>مبلغ کل</span>  
+</div>  </div>  <div class="search-box">  <input
+type="text"
+id="searchInput"
+placeholder="🔍 جستجوی محصول..."
+oninput="searchProducts()"
+
+> 
+
+<select id="sortProducts" onchange="sortProducts()">  <option value="default">  
+مرتب‌سازی محصولات  
+</option>  <option value="cheap">  
+ارزان‌ترین  
+</option>  <option value="expensive">  
+گران‌ترین  
+</option>  </select>  </div>  <div class="products-section-title">  <h2>  
+🛍️ محصولات mimi shop  
+</h2>  <p>  
+جدیدترین مدل‌ها را ببینید و محصول مورد علاقه‌تان را انتخاب کنید 💕  
+</p>  </div>  <div class="category-buttons">  <button onclick="filterProducts('all')">  
+همه محصولات  
+</button>  <button onclick="filterProducts('sets')">  
+ست‌های زنانه  
+</button>  <button onclick="filterProducts('sale')">  
+🔥 تخفیف‌دار  
+</button>  <button onclick="filterProducts('new')">  
+🆕 جدیدها  
+</button>  </div>  <div class="products" id="products">  <!-- محصول اول -->  <div  
+class="product sets sale"  
+data-price="350000"  
+>  <div class="badge">  
+🔥 12٪ تخفیف ویژه  
+</div>  <img
+src="product.jpg"
+alt="ست لباس زیر زنانه"
+
+> 
+
+<button
+class="favorite"
+onclick="toggleFavorite(this)"
+
+> 
+
+♡
+</button>
+
+<button
+class="details-btn"
+onclick="showProductDetails(this)"
+
+> 
+
+👁️ مشاهده جزئیات
+</button>
+
+<h2>  
+ست لباس زیر زنانه  
+</h2>  <label>  
+سایز:  
+</label>  <select class="size">  <option>کوچک (S)</option>  
+<option>متوسط (M)</option>  
+<option>بزرگ (L)</option>  
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>
+
+<label>  
+رنگ:  
+</label>  <select class="color">  <option>مشکی</option>  
+<option>سفید</option>  
+<option>قرمز</option>  
+<option>صورتی</option>  </select>  <p>  <del>  
+400,000 تومان  
+</del>  <strong>  
+350,000 تومان  
+</strong>  </p>  <button
+onclick="buyproductWithOptions(this,'ست لباس زیر زنانه',350000)"
+
+> 
+
+خرید محصول
+</button>
+
+</div>  <!-- محصول دوم -->  <div  
+class="product sets"  
+data-price="520000"  
+>  <img
+src="product3.jpg"
+alt="ست شیک زنانه"
+
+> 
+
+<button
+class="favorite"
+onclick="toggleFavorite(this)"
+
+> 
+
+♡
+</button>
+
+<button
+class="details-btn"
+onclick="showProductDetails(this)"
+
+> 
+
+👁️ مشاهده جزئیات
+</button>
+
+<h2>  
+ست شیک زنانه  
+</h2>  <label>  
+سایز:  
+</label>  <select class="size">  <option>کوچک (S)</option>  
+<option>متوسط (M)</option>  
+<option>بزرگ (L)</option>  
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>
+
+<label>  
+رنگ:  
+</label>  <select class="color">  <option>مشکی</option>  
+<option>سفید</option>  
+<option>قرمز</option>  
+<option>صورتی</option>  </select>  <p>  <strong>  
+520,000 تومان  
+</strong>  </p>  <button
+onclick="buyproductWithOptions(this,'ست شیک زنانه',520000)"
+
+> 
+
+خرید محصول
+</button>
+
+</div>  <!-- محصول سوم -->  <div  
+class="product sets new"  
+data-price="450000"  
+>  <img
+src="product2.jpg"
+alt="ست جدید زنانه"
+
+> 
+
+<button
+class="favorite"
+onclick="toggleFavorite(this)"
+
+> 
+
+♡
+</button>
+
+<button
+class="details-btn"
+onclick="showProductDetails(this)"
+
+> 
+
+👁️ مشاهده جزئیات
+</button>
+
+<h2>  
+ست جدید زنانه  
+</h2>  <label>  
+سایز:  
+</label>  <select class="size">  <option>کوچک (S)</option>  
+<option>متوسط (M)</option>  
+<option>بزرگ (L)</option>  
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>
+
+<label>  
+رنگ:  
+</label>  <select class="color">  <option>مشکی</option>  
+<option>سفید</option>  
+<option>قرمز</option>  
+<option>صورتی</option>  </select>  <p>  <strong>  
+450,000 تومان  
+</strong>  </p>  <button
+onclick="buyproductWithOptions(this,'ست جدید زنانه',450000)"
+
+> 
+
+خرید محصول
+</button>
+
+</div>  </div>  <!-- سبد خرید -->  <div class="cart-box" id="cartBox">  <h2>  
+🛒 سبد خرید  
+</h2>  <div id="cartItems"></div>  <div class="cart-total">  مبلغ کل:
+
+<span id="cartTotal">  
+0 تومان  
+</span>  </div>  <button onclick="clearCart()">  
+🗑️ خالی کردن سبد  
+</button>  </div>  <!-- سفارش -->  <div class="customer-box">  <h2>  
+اطلاعات مشتری  
+</h2>  <input
+type="text"
+id="customerName"
+placeholder="نام و نام خانوادگی"
+
+> 
+
+<br><br>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="شماره موبایل"
+
+> 
+
+<br><br>
+
+<textarea  
+id="customerAddress"  
+placeholder="آدرس کامل"  
+></textarea>  <br><br>
+
+<h3>  
+روش پرداخت  
+</h3>  <label>  <input
+type="radio"
+name="payment"
+value="online"
+onchange="showPaymentBox()"
+
+> 
+
+پرداخت آنلاین
+
+</label>  <br><br>
+
+<label>  <input
+type="radio"
+name="payment"
+value="cash"
+onchange="hidePaymentBox()"
+
+> 
+
+پرداخت در محل
+
+</label>  <br><br>
+
+<button onclick="submitOrder()">  
+ثبت سفارش  
+</button>  <div  
+id="paymentBox"  
+style="display:none;"  
+>  <h3>  
+💳 پرداخت آنلاین  
+</h3>  <p>  
+مبلغ قابل پرداخت:  
+</p>  <strong id="paymentAmount">  
+</strong>  <br><br>
+
+<button onclick="payNow()">  
+پرداخت  
+</button>  </div>  </div>  <!-- نتیجه سفارش -->  <div  
+class="order-success"  
+id="orderSuccess"  
+>  <h2>  
+✅ سفارش شما ثبت شد  
+</h2>  <p id="successText"></p>  </div>  <!-- تماس -->  <div class="contact-box" id="contact">  <h2>  
+📞 تماس با ما  
+</h2>  <p>  
+برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸  
+</p>  <p>  
+📱 تلفن: 09917895945  
+</p>  <p>  
+💬 واتساپ: پاسخگویی به سفارش‌ها  
+</p>  <a
+href="https://api.whatsapp.com/send?phone=989917895945"
+target="_blank"
+style="
+display:inline-block;
+padding:12px 25px;
+font-size:18px;
+background:#d6336c;
+color:white;
+text-decoration:none;
+border-radius:10px;
+"
+
+> 
+
+💬 پیام در واتساپ
+</a>
+
+</div>  <!-- پنجره جزئیات -->  <div  
+class="product-modal"  
+id="productModal"  
+>  <div class="product-modal-content">  <button
+class="close-modal"
+onclick="closeProductDetails()"
+
+> 
+
+×
+</button>
+
+<img
+id="modalImage"
+src=""
+alt="محصول"
+
+> 
+
+<h2 id="modalTitle"></h2>  <p id="modalDescription"></p>  <div  
+class="modal-price"  
+id="modalPrice"  
+></div>  <br>  <label>  
+سایز:  
+</label>  <select
+class="modal-select"
+id="modalSize"
+
+> 
+
+<option>کوچک (S)</option>  
+<option>متوسط (M)</option>  
+<option>بزرگ (L)</option>  
+<option>خیلی بزرگ (XL)</option>  </select>  <br>  <label>  
+رنگ:  
+</label>  <select
+class="modal-select"
+id="modalColor"
+
+> 
+
+<option>مشکی</option>  
+<option>سفید</option>  
+<option>قرمز</option>  
+<option>صورتی</option>  </select>  <br><br>
+
+<button onclick="addModalProductToCart()">  
+🛒 افزودن به سبد خرید  
+</button>  </div>  </div>  <script>  
+  
+/* =========================  
+   اطلاعات اصلی  
+========================= */  
+  
+let cart =  
+JSON.parse(localStorage.getItem("cart")) || [];  
+  
+let favorites =  
+JSON.parse(localStorage.getItem("favorites")) || [];  
+  
+let totalPrice = 0;  
+  
+let selectedModalProduct = null;  
+  
+let selectedCategory = "all";  
+  
+  
+/* =========================  
+   اسکرول  
+========================= */  
+  
+function scrollToProducts(){  
+  
+document  
+.getElementById("products")  
+.scrollIntoView({  
+behavior:"smooth"  
+});  
+  
+}  
+  
+function scrollToCart(){  
+  
+document  
+.getElementById("cartBox")  
+.scrollIntoView({  
+behavior:"smooth"  
+});  
+  
+}  
+  
+  
+/* =========================  
+   افزودن محصول  
+========================= */  
+  
+function buyproductWithOptions(  
+button,  
+name,  
+price  
+){  
+  
+let productBox =  
+button.parentElement;  
+  
+let size =  
+productBox.querySelector(".size").value;  
+  
+let color =  
+productBox.querySelector(".color").value;  
+  
+let image =  
+productBox.querySelector("img").src;  
+  
+let productName =  
+name +  
+" | سایز: " +  
+size +  
+" | رنگ: " +  
+color;  
+  
+let product =  
+cart.find(  
+item => item.name === productName  
+);  
+  
+if(product){  
+  
+product.quantity++;  
+  
+}else{  
+  
+cart.push({  
+  
+name:productName,  
+  
+price:price,  
+  
+quantity:1,  
+  
+image:image  
+  
+});  
+  
+}  
+  
+updateCart();  
+  
+alert(  
+"محصول به سبد خرید اضافه شد 🌸"  
+);  
+  
+}  
+  
+  
+/* =========================  
+   بروزرسانی سبد  
+========================= */  
+  
+function updateCart(){  
+  
+let cartItems =  
+document.getElementById("cartItems");  
+  
+cartItems.innerHTML="";  
+  
+let cartCount=0;  
+  
+totalPrice=0;  
+  
+  
+if(cart.length===0){  
+  
+cartItems.innerHTML =  
+"<p>🛒 سبد خرید شما خالی است 🌸</p>";  
+  
+}  
+  
+  
+cart.forEach(  
+function(product,index){  
+  
+cartCount +=  
+product.quantity;  
+  
+totalPrice +=  
+product.price *  
+product.quantity;  
+  
+  
+let item =  
+document.createElement("div");  
+  
+item.className =  
+"cart-item";  
+  
+  
+if(product.image){  
+  
+let image =  
+document.createElement("img");  
+  
+image.src =  
+product.image;  
+  
+image.alt =  
+product.name;  
+  
+item.appendChild(image);  
+  
+}  
+  
+  
+let info =  
+document.createElement("div");  
+  
+info.className =  
+"cart-info";  
+  
+  
+let title =  
+document.createElement("strong");  
+  
+title.innerText =  
+product.name;  
+  
+info.appendChild(title);  
+  
+  
+let price =  
+document.createElement("p");  
+  
+price.innerText =  
+"قیمت واحد: " +  
+product.price.toLocaleString() +  
+" تومان";  
+  
+info.appendChild(price);  
+  
+  
+let itemTotal =  
+document.createElement("p");  
+  
+itemTotal.innerText =  
+"مبلغ: " +  
+(  
+product.price *  
+product.quantity  
+).toLocaleString() +  
+" تومان";  
+  
+info.appendChild(itemTotal);  
+  
+  
+/* کم کردن */  
+  
+let minus =  
+document.createElement("button");  
+  
+minus.innerText="−";  
+  
+minus.onclick=function(){  
+  
+if(product.quantity>1){  
+  
+product.quantity--;  
+  
+}else{  
+  
+cart.splice(index,1);  
+  
+}  
+  
+updateCart();  
+  
+};  
+  
+info.appendChild(minus);  
+  
+  
+/* تعداد */  
+  
+let number =  
+document.createElement("span");  
+  
+number.innerText =  
+" " +  
+product.quantity +  
+" ";  
+  
+info.appendChild(number);  
+  
+  
+/* اضافه کردن */  
+  
+let plus =  
+document.createElement("button");  
+  
+plus.innerText="+";  
+  
+plus.onclick=function(){  
+  
+product.quantity++;  
+  
+updateCart();  
+  
+};  
+  
+info.appendChild(plus);  
+  
+  
+/* حذف */  
+  
+let deleteButton =  
+document.createElement("button");  
+  
+deleteButton.className =  
+"delete";  
+  
+deleteButton.innerText =  
+"🗑️ حذف";  
+  
+deleteButton.onclick=function(){  
+  
+cart.splice(index,1);  
+  
+updateCart();  
+  
+};  
+  
+info.appendChild(deleteButton);  
+  
+  
+item.appendChild(info);  
+  
+cartItems.appendChild(item);  
+  
+}  
+);  
+  
+  
+/* ذخیره */  
+  
+localStorage.setItem(  
+"cart",  
+JSON.stringify(cart)  
+);  
+  
+  
+/* نمایش تعداد */  
+  
+document.getElementById("cart").innerText =  
+cartCount +  
+" محصول";  
+  
+  
+/* مبلغ بالا */  
+  
+document.getElementById("total").innerText =  
+totalPrice.toLocaleString() +  
+" تومان";  
+  
+  
+/* مبلغ داخل سبد */  
+  
+document.getElementById("cartTotal").innerText =  
+totalPrice.toLocaleString() +  
+" تومان";  
+  
+}  
+  
+  
+/* =========================  
+   خالی کردن سبد  
+========================= */  
+  
+function clearCart(){  
+  
+if(cart.length===0){  
+  
+alert(  
+"سبد خرید از قبل خالی است 🌸"  
+);  
+  
+return;  
+  
+}  
+  
+if(  
+confirm(  
+"آیا مطمئنی می‌خواهی سبد خرید را خالی کنی؟"  
+)  
+){  
+  
+cart=[];  
+  
+localStorage.removeItem("cart");  
+  
+updateCart();  
+  
+}  
+  
+}  
+  
+  
+/* =========================  
+   شماره سفارش  
+========================= */  
+  
+function createOrderId(){  
+  
+let time =  
+Date.now();  
+  
+let random =  
+Math.floor(  
+Math.random()*1000  
+);  
+  
+return  
+"MIMI-" +  
+time +  
+"-" +  
+random;  
+  
+}  
+  
+  
+/* =========================  
+   ساخت سفارش  
+========================= */  
+  
+function createOrder(){  
+  
+let name =  
+document  
+.getElementById("customerName")  
+.value.trim();  
+  
+let phone =  
+document  
+.getElementById("customerPhone")  
+.value.trim();  
+  
+let address =  
+document  
+.getElementById("customerAddress")  
+.value.trim();  
+  
+let payment =  
+document.querySelector(  
+'input[name="payment"]:checked'  
+);  
+  
+  
+return {  
+  
+id:createOrderId(),  
+  
+customerName:name,  
+  
+customerPhone:phone,  
+  
+customerAddress:address,  
+  
+paymentMethod:  
+payment.value,  
+  
+amount:totalPrice,  
+  
+items:cart,  
+  
+date:  
+new Date().toLocaleString("fa-IR")  
+  
+};  
+  
+}  
+  
+  
+/* =========================  
+   ثبت سفارش  
+========================= */  
+  
+function submitOrder(){  
+  
+let cartCount =  
+cart.reduce(  
+(sum,product)=>  
+sum+product.quantity,  
+0  
+);  
+  
+if(cartCount===0){  
+  
+alert(  
+"🛒 لطفاً ابتدا محصولی به سبد خرید اضافه کنید."  
+);  
+  
+return;  
+  
+}  
+  
+  
+let name =  
+document  
+.getElementById("customerName")  
+.value.trim();  
+  
+let phone =  
+document  
+.getElementById("customerPhone")  
+.value.trim();  
+  
+let address =  
+document  
+.getElementById("customerAddress")  
+.value.trim();  
+  
+let payment =  
+document.querySelector(  
+'input[name="payment"]:checked'  
+);  
+  
+  
+if(!name ||  
+!phone ||  
+!address){  
+  
+alert(  
+"⚠️ لطفاً اطلاعات مشتری را کامل وارد کنید."  
+);  
+  
+return;  
+  
+}  
+  
+  
+let phonePattern =  
+/^09\d{9}$/;  
+  
+if(  
+!phonePattern.test(phone)  
+){  
+  
+alert(  
+"📱 شماره موبایل صحیح نیست."  
+);  
+  
+return;  
+  
+}  
+  
+  
+if(!payment){  
+  
+alert(  
+"💳 لطفاً روش پرداخت را انتخاب کنید."  
+);  
+  
+return;  
+  
+}  
+  
+  
+let order =  
+createOrder();  
+  
+  
+localStorage.setItem(  
+"lastOrder",  
+JSON.stringify(order)  
+);  
+  
+  
+/* ساخت پیام واتساپ */  
+  
+let orderText =  
+"🌸 سلام، سفارش جدید از mimi shop\n\n";  
+  
+orderText +=  
+"🧾 شماره سفارش: " +  
+order.id +  
+"\n";  
+  
+orderText +=  
+"👤 نام مشتری: " +  
+name +  
+"\n";  
+  
+orderText +=  
+"📱 شماره تماس: " +  
+phone +  
+"\n";  
+  
+orderText +=  
+"📍 آدرس: " +  
+address +  
+"\n\n";  
+  
+orderText +=  
+"🛍️ جزئیات سفارش:\n";  
+  
+orderText +=  
+"━━━━━━━━━━━━━━\n";  
+  
+  
+cart.forEach(  
+function(product){  
+  
+orderText +=  
+"🌸 " +  
+product.name +  
+"\n";  
+  
+orderText +=  
+"تعداد: " +  
+product.quantity +  
+"\n";  
+  
+orderText +=  
+"قیمت واحد: " +  
+product.price.toLocaleString() +  
+" تومان\n";  
+  
+orderText +=  
+"مبلغ: " +  
+(  
+product.price *  
+product.quantity  
+).toLocaleString() +  
+" تومان\n";  
+  
+orderText +=  
+"━━━━━━━━━━━━━━\n";  
+  
+}  
+);  
+  
+  
+orderText +=  
+"\n💰 مبلغ نهایی: " +  
+totalPrice.toLocaleString() +  
+" تومان\n";  
+  
+  
+if(payment.value==="cash"){  
+  
+orderText +=  
+"💵 روش پرداخت: پرداخت در محل";  
+  
+}else{  
+  
+orderText +=  
+"💳 روش پرداخت: پرداخت آنلاین";  
+  
+}  
+  
+  
+/* نمایش نتیجه */  
+  
+document  
+.getElementById("orderSuccess")  
+.style.display="block";  
+  
+document  
+.getElementById("successText")  
+.innerText =  
+"شماره سفارش شما: " +  
+order.id;  
+  
+  
+/* پرداخت در محل */  
+  
+if(payment.value==="cash"){  
+  
+let whatsappNumber =  
+"989917895945";  
+  
+let whatsappURL =  
+"https://wa.me/" +  
+whatsappNumber +  
+"?text=" +  
+encodeURIComponent(orderText);  
+  
+window.location.href =  
+whatsappURL;  
+  
+return;  
+  
+}  
+  
+  
+/* پرداخت آنلاین */  
+  
+document  
+.getElementById("paymentBox")  
+.style.display="block";  
+  
+document  
+.getElementById("paymentAmount")  
+.innerText =  
+totalPrice.toLocaleString() +  
+" تومان";  
+  
+}  
+  
+  
+/* =========================  
+   پرداخت آنلاین  
+========================= */  
+  
+function showPaymentBox(){  
+  
+if(totalPrice>0){  
+  
+document  
+.getElementById("paymentBox")  
+.style.display="block";  
+  
+document  
+.getElementById("paymentAmount")  
+.innerText =  
+totalPrice.toLocaleString() +  
+" تومان";  
+  
+}  
+  
+}  
+  
+  
+function hidePaymentBox(){  
+  
+document  
+.getElementById("paymentBox")  
+.style.display="none";  
+  
+}  
+  
+  
+/* فعلاً زرین‌پال اینجا قرار می‌گیرد */  
+  
+function payNow(){  
+  
+alert(  
+"💳 این قسمت در مرحله بعد به زرین‌پال متصل می‌شود.\n\n" +  
+"مبلغ سفارش: " +  
+totalPrice.toLocaleString() +  
+" تومان"  
+);  
+  
+}  
+  
+  
+/* =========================  
+   علاقه‌مندی  
+========================= */  
+  
+function toggleFavorite(button){  
+  
+let productBox =  
+button.parentElement;  
+  
+let productName =  
+productBox  
+.querySelector("h2")  
+.innerText;  
+  
+  
+if(  
+favorites.includes(productName)  
+){  
+  
+favorites =  
+favorites.filter(  
+item =>  
+item!==productName  
+);  
+  
+button.innerText="♡";  
+  
+button.style.backgroundColor=  
+"white";  
+  
+button.style.color=  
+"#d6336c";  
+  
+}else{  
+  
+favorites.push(productName);  
+  
+button.innerText="♥";  
+  
+button.style.backgroundColor=  
+"#d6336c";  
+  
+button.style.color=  
+"white";  
+  
+}  
+  
+localStorage.setItem(  
+"favorites",  
+JSON.stringify(favorites)  
+);  
+  
+}  
+  
+  
+/* =========================  
+   بارگذاری علاقه‌مندی  
+========================= */  
+  
+function loadFavorites(){  
+  
+document  
+.querySelectorAll(".favorite")  
+.forEach(  
+function(button){  
+  
+let name =  
+button.parentElement  
+.querySelector("h2")  
+.innerText;  
+  
+if(  
+favorites.includes(name)  
+){  
+  
+button.innerText="♥";  
+  
+button.style.backgroundColor=  
+"#d6336c";  
+  
+button.style.color=  
+"white";  
+  
+}  
+  
+}  
+);  
+  
+}  
+  
+  
+/* =========================  
+   مرتب‌سازی  
+========================= */  
+  
+function sortProducts(){  
+  
+let box =  
+document.getElementById("products");  
+  
+let products =  
+Array.from(  
+box.querySelectorAll(".product")  
+);  
+  
+let type =  
+document.getElementById(  
+"sortProducts"  
+).value;  
+  
+  
+products.sort(  
+function(a,b){  
+  
+let priceA =  
+parseInt(  
+a.dataset.price  
+);  
+  
+let priceB =  
+parseInt(  
+b.dataset.price  
+);  
+  
+  
+if(type==="cheap"){  
+  
+return priceA-priceB;  
+  
+}  
+  
+if(type==="expensive"){  
+  
+return priceB-priceA;  
+  
+}  
+  
+return 0;  
+  
+}  
+);  
+  
+  
+products.forEach(  
+product =>  
+box.appendChild(product)  
+);  
+  
+}  
+  
+  
+/* =========================  
+   فیلتر  
+========================= */  
+  
+function filterProducts(category){  
+  
+selectedCategory =  
+category;  
+  
+applyProductFilters();  
+  
+}  
+  
+  
+function searchProducts(){  
+  
+applyProductFilters();  
+  
+}  
+  
+  
+function applyProductFilters(){  
+  
+let products =  
+document.querySelectorAll(  
+".product"  
+);  
+  
+let searchInput =  
+document.getElementById(  
+"searchInput"  
+);  
+  
+let searchText =  
+searchInput.value  
+.toLowerCase()  
+.trim();  
+  
+let found=0;  
+  
+  
+products.forEach(  
+function(product){  
+  
+let name =  
+product  
+.querySelector("h2")  
+.innerText  
+.toLowerCase();  
+  
+let categoryMatch =  
+selectedCategory==="all" ||  
+product.classList.contains(  
+selectedCategory  
+);  
+  
+let searchMatch =  
+name.includes(searchText);  
+  
+  
+if(  
+categoryMatch &&  
+searchMatch  
+){  
+  
+product.style.display=  
+"block";  
+  
+found++;  
+  
+}else{  
+  
+product.style.display=  
+"none";  
+  
+}  
+  
+}  
+);  
+  
+  
+let old =  
+document.querySelector(  
+".no-result"  
+);  
+  
+if(old){  
+  
+old.remove();  
+  
+}  
+  
+  
+if(found===0){  
+  
+let message =  
+document.createElement("p");  
+  
+message.className=  
+"no-result";  
+  
+message.innerText=  
+"😔 محصولی پیدا نشد";  
+  
+document  
+.getElementById("products")  
+.appendChild(message);  
+  
+}  
+  
+}  
+  
+  
+/* =========================  
+   جزئیات محصول  
+========================= */  
+  
+function showProductDetails(button){  
+  
+let box =  
+button.parentElement;  
+  
+let title =  
+box.querySelector("h2")  
+.innerText;  
+  
+let image =  
+box.querySelector("img")  
+.src;  
+  
+let price =  
+parseInt(  
+box.dataset.price  
+);  
+  
+  
+selectedModalProduct = {  
+  
+name:title,  
+  
+image:image,  
+  
+price:price  
+  
+};  
+  
+  
+document  
+.getElementById("modalImage")  
+.src=image;  
+  
+document  
+.getElementById("modalTitle")  
+.innerText=title;  
+  
+document  
+.getElementById("modalPrice")  
+.innerText=  
+price.toLocaleString() +  
+" تومان";  
+  
+document  
+.getElementById("modalDescription")  
+.innerText=  
+"این محصول با کیفیت عالی و طراحی زیبا برای استفاده روزمره آماده شده است. 🌸";  
+  
+  
+document  
+.getElementById("productModal")  
+.style.display="flex";  
+  
+}  
+  
+  
+function closeProductDetails(){  
+  
+document  
+.getElementById("productModal")  
+.style.display="none";  
+  
+}  
+  
+  
+/* بستن با کلیک بیرون */  
+  
+document  
+.getElementById("productModal")  
+.addEventListener(  
+"click",  
+function(event){  
+  
+if(event.target===this){  
+  
+closeProductDetails();  
+  
+}  
+  
+}  
+);  
+  
+  
+/* =========================  
+   افزودن محصول از پنجره  
+========================= */  
+  
+function addModalProductToCart(){  
+  
+if(!selectedModalProduct){  
+  
+return;  
+  
+}  
+  
+  
+let size =  
+document  
+.getElementById("modalSize")  
+.value;  
+  
+let color =  
+document  
+.getElementById("modalColor")  
+.value;  
+  
+  
+let productName =  
+selectedModalProduct.name +  
+" | سایز: " +  
+size +  
+" | رنگ: " +  
+color;  
+  
+  
+let product =  
+cart.find(  
+item =>  
+item.name===productName  
+);  
+  
+  
+if(product){  
+  
+product.quantity++;  
+  
+}else{  
+  
+cart.push({  
+  
+name:productName,  
+  
+price:selectedModalProduct.price,  
+  
+quantity:1,  
+  
+image:selectedModalProduct.image  
+  
+});  
+  
+}  
+  
+  
+updateCart();  
+  
+closeProductDetails();  
+  
+alert(  
+"محصول با موفقیت به سبد خرید اضافه شد 🌸"  
+);  
+  
+}  
+  
+  
+/* =========================  
+   شروع سایت  
+========================= */  
+  
+loadFavorites();  
+  
+updateCart();  
+  
+</script>  </body>  
+</html>

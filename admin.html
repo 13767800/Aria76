@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>پنل مدیریت mimi shop</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#fff5f8;
+color:#333;
+}
+
+header{
+background:white;
+padding:20px;
+text-align:center;
+border-bottom:1px solid #f3c4d5;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+header h1{
+margin:0;
+color:#d6336c;
+}
+
+.container{
+width:92%;
+max-width:1100px;
+margin:30px auto;
+}
+
+/* آمار */
+
+.stats{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:30px;
+}
+
+.stat{
+background:white;
+border:1px solid #f3c4d5;
+border-radius:18px;
+padding:20px;
+min-width:200px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.stat span{
+display:block;
+font-size:28px;
+font-weight:bold;
+color:#d6336c;
+margin-top:10px;
+}
+
+/* سفارش */
+
+.orders{
+background:white;
+padding:20px;
+border-radius:20px;
+border:1px solid #f3c4d5;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.orders h2{
+color:#d6336c;
+}
+
+.order{
+background:#fff5f8;
+border:1px solid #f3c4d5;
+border-radius:15px;
+padding:18px;
+margin:15px 0;
+}
+
+.order h3{
+color:#d6336c;
+margin-top:0;
+}
+
+.order p{
+line-height:1.8;
+}
+
+.order-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+button{
+border:none;
+border-radius:10px;
+padding:10px 18px;
+font-size:15px;
+cursor:pointer;
+background:#d6336c;
+color:white;
+}
+
+button:hover{
+background:#b52b5a;
+}
+
+.delete{
+background:#888;
+}
+
+.delete:hover{
+background:#555;
+}
+
+.clear{
+background:#c62828;
+}
+
+.empty{
+text-align:center;
+padding:30px;
+color:#777;
+font-size:18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:20px;
+text-decoration:none;
+color:#d6336c;
+font-weight:bold;
+}
+
+@media(max-width:600px){
+
+.stat{
+width:100%;
+}
+
+.order-buttons button{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+🌸 پنل مدیریت mimi shop
+</h1>
+
+</header>
+
+
+<div class="container">
+
+<a
+href="index.html"
+class="back"
+>
+← بازگشت به فروشگاه
+</a>
+
+
+<!-- آمار -->
+
+<div class="stats">
+
+<div class="stat">
+
+🧾 سفارش‌ها
+
+<span id="orderCount">
+0
+</span>
+
+</div>
+
+
+<div class="stat">
+
+💰 مجموع فروش
+
+<span id="salesTotal">
+0 تومان
+</span>
+
+</div>
+
+</div>
+
+
+<!-- سفارش ها -->
+
+<div class="orders">
+
+<h2>
+📦 سفارش‌های ثبت شده
+</h2>
+
+<div id="ordersList">
+
+</div>
+
+<br>
+
+<button
+class="clear"
+onclick="clearOrders()"
+>
+🗑️ حذف همه سفارش‌ها
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   دریافت سفارش
+========================= */
+
+function getOrders(){
+
+let orders =
+JSON.parse(
+localStorage.getItem("orders")
+) || [];
+
+return orders;
+
+}
+
+
+/* =========================
+   نمایش سفارش‌ها
+========================= */
+
+function showOrders(){
+
+let orders =
+getOrders();
+
+let list =
+document.getElementById(
+"ordersList"
+);
+
+list.innerHTML="";
+
+
+let totalSales=0;
+
+
+if(orders.length===0){
+
+list.innerHTML=
+`
+<div class="empty">
+📦 هنوز سفارشی ثبت نشده است.
+</div>
+`;
+
+}
+
+
+orders.forEach(
+function(order,index){
+
+totalSales +=
+Number(order.amount);
+
+
+let itemsText="";
+
+
+order.items.forEach(
+function(item){
+
+itemsText +=
+`
+<li>
+${item.name}
+<br>
+تعداد: ${item.quantity}
+<br>
+قیمت: ${item.price.toLocaleString()} تومان
+</li>
+`;
+
+}
+);
+
+
+let div =
+document.createElement("div");
+
+div.className="order";
+
+
+div.innerHTML=
+`
+
+<h3>
+🧾 سفارش ${order.id}
+</h3>
+
+<p>
+👤 <strong>مشتری:</strong>
+${order.customerName}
+</p>
+
+<p>
+📱 <strong>موبایل:</strong>
+${order.customerPhone}
+</p>
+
+<p>
+📍 <strong>آدرس:</strong>
+${order.customerAddress}
+</p>
+
+<p>
+💳 <strong>پرداخت:</strong>
+${order.paymentMethod==="cash"
+? "پرداخت در محل"
+: "پرداخت آنلاین"}
+</p>
+
+<p>
+🕐 <strong>تاریخ:</strong>
+${order.date}
+</p>
+
+<hr>
+
+<strong>
+🛍️ محصولات:
+</strong>
+
+<ul>
+${itemsText}
+</ul>
+
+<p>
+💰 <strong>مبلغ کل:</strong>
+${Number(order.amount).toLocaleString()}
+تومان
+</p>
+
+<div class="order-buttons">
+
+<button
+onclick="sendWhatsApp(${index})"
+>
+💬 واتساپ
+</button>
+
+<button
+class="delete"
+onclick="deleteOrder(${index})"
+>
+🗑️ حذف سفارش
+</button>
+
+</div>
+
+`;
+
+
+list.appendChild(div);
+
+}
+);
+
+
+/* آمار */
+
+document.getElementById(
+"orderCount"
+).innerText =
+orders.length;
+
+
+document.getElementById(
+"salesTotal"
+).innerText =
+totalSales.toLocaleString() +
+" تومان";
+
+}
+
+
+/* =========================
+   حذف سفارش
+========================= */
+
+function deleteOrder(index){
+
+if(
+!confirm(
+"آیا مطمئنی می‌خواهی این سفارش را حذف کنی؟"
+)
+){
+
+return;
+
+}
+
+
+let orders =
+getOrders();
+
+orders.splice(index,1);
+
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+
+showOrders();
+
+}
+
+
+/* =========================
+   حذف همه
+========================= */
+
+function clearOrders(){
+
+let orders =
+getOrders();
+
+
+if(orders.length===0){
+
+alert(
+"سفارشی برای حذف وجود ندارد."
+);
+
+return;
+
+}
+
+
+if(
+!confirm(
+"آیا می‌خواهی تمام سفارش‌ها حذف شوند؟"
+)
+){
+
+return;
+
+}
+
+
+localStorage.removeItem(
+"orders"
+);
+
+
+showOrders();
+
+}
+
+
+/* =========================
+   واتساپ
+========================= */
+
+function sendWhatsApp(index){
+
+let orders =
+getOrders();
+
+let order =
+orders[index];
+
+
+let text =
+"🌸 پیگیری سفارش mimi shop\n\n";
+
+text +=
+"🧾 شماره سفارش: " +
+order.id +
+"\n";
+
+text +=
+"👤 مشتری: " +
+order.customerName +
+"\n";
+
+text +=
+"📱 موبایل: " +
+order.customerPhone +
+"\n\n";
+
+text +=
+"💰 مبلغ سفارش: " +
+Number(order.amount).toLocaleString() +
+" تومان";
+
+
+let url =
+"https://wa.me/" +
+order.customerPhone.replace(/^0/,"98") +
+"?text=" +
+encodeURIComponent(text);
+
+
+window.open(
+url,
+"_blank"
+);
+
+}
+
+
+/* =========================
+   شروع
+========================= */
+
+showOrders();
+
+</script>
+
+</body>
+
+</html>
