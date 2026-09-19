@@ -1,5 +1,17 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">    <head>      <meta charset="UTF-8">        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>mimi shop</title>  <style>    *{  box-sizing:border-box;  }  body{  margin:0;  text-align:center;  font-family:Arial,sans-serif;  background-color:#fff5f8;  color:#333;  }  h1{
-font-size:35px;
+<!DOCTYPE html>  <html lang="fa" dir="rtl">    <head>      <meta charset="UTF-8">        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>mimi shop</title>  <style>    *{  box-sizing:border-box;  }    body{
+margin:0;
+text-align:center;
+font-family:Arial,sans-serif;
+
+background-image:url("background.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:#333;
+}
+
+h1{  font-size:35px;
 color:#d6336c;
 }
 
@@ -968,293 +980,289 @@ color:#257942;
 
 </style>  </head>  <body>
 
-<header>  <div class="logo">            
-    🌸 mimi shop            
-</div>    <button class="menu-toggle" onclick="toggleMenu()">            
-    ☰            
-</button>    <nav>            
-    <a href="#">🏠 خانه</a>            
-    <a href="#products">🛍️ محصولات</a>            
-    <a href="#cartBox">🛒 سبد خرید</a>            
-    <a href="#contact">📞 تماس با ما</a>            
-</nav>  </header>            
-<section class="hero">  <div class="hero-content">  <div class="hero-text">  <span class="hero-badge">                          
-🌸 فروشگاه آنلاین لباس زیر زنانه                          
-</span>  <h1>                          
-به دنیای زیبای                          
-<span>mimi shop</span>                          
-خوش آمدید 💕                          
-</h1>  <p>                          
-جدیدترین مدل‌های لباس زیر زنانه                          
-با کیفیت عالی و طراحی زیبا                          
-</p>  <div class="hero-buttons">  <button onclick="scrollToProducts()">                          
-🛍️ مشاهده محصولات                          
-</button>  <button class="hero-cart" onclick="scrollToCart()">                          
-🛒 سبد خرید                          
-</button>  </div>  </div>    </div>                      
-</section>      
-<!-- ===== SPECIAL OFFER ===== -->  <section class="special-offer">    <h2>🔥 فروش ویژه mimi shop</h2>    <p>                    
-    فرصت محدود برای خرید محصولات منتخب با تخفیف ویژه 💕                    
-</p>    <div class="countdown" id="countdown">    <div class="time-box">                    
-    <strong id="days">00</strong>                    
-    <span>روز</span>                    
-</div>      <div class="time-box">                    
-    <strong id="hours">00</strong>                    
-    <span>ساعت</span>                    
-</div>      <div class="time-box">                    
-    <strong id="minutes">00</strong>                    
-    <span>دقیقه</span>                    
-</div>      <div class="time-box">                    
-    <strong id="seconds">00</strong>                    
-    <span>ثانیه</span>                    
-</div>  </div>  </section>                 
-  <!-- ===== SHOP STATUS ===== -->  <div class="shop-status">  <div>                
-    🛒                
-    <strong id="cart">0</strong>                
-    <span>محصول در سبد</span>                
-</div>    <div>                
-    💰                
-    <strong id="total">0 تومان</strong>                
-    <span>مبلغ کل</span>                
-</div>  </div>                   
-<div class="search-box">          
-<!-- ===== TRUST FEATURES ===== -->  <section class="trust-section">  <div class="trust-card">    <div class="trust-icon">        
-    🚚        
-</div>      <h3>        
-    ارسال سریع        
-</h3>      <p>        
-    سفارش شما با سرعت و دقت آماده ارسال می‌شود.        
-</p>  </div>    <div class="trust-card">    <div class="trust-icon">        
-    💎        
-</div>      <h3>        
-    کیفیت محصولات        
-</h3>      <p>        
-    انتخاب محصولات با کیفیت و طراحی زیبا.        
-</p>  </div>    <div class="trust-card">    <div class="trust-icon">        
-    💬        
-</div>      <h3>        
-    پشتیبانی        
-</h3>      <p>        
-    برای سوالات و سفارش‌ها از طریق واتساپ با ما در ارتباط باشید.        
-</p>  </div>  </section>        
-<input                        
-type="text"                        
-id="searchInput"                        
-placeholder="🔍 جستجوی محصول..."                        
-oninput="searchProducts()"  >   <select id="sortProducts" onchange="sortProducts()">  <option value="default">                    
-مرتب‌سازی محصولات  </option>  <option value="cheap">                          
-ارزان‌ترین                          
-</option>  <option value="expensive">                          
-گران‌ترین                          
-</option>  </select>  </div>  <div class="products-section-title">  <h2>                          
-🛍️ محصولات mimi shop                          
-</h2>  <p>                          
-جدیدترین مدل‌ها را ببینید و محصول مورد علاقه‌تان را انتخاب کنید 💕                          
-</p>  </div>  <div class="category-buttons">  <button onclick="filterProducts('all')">                          
-همه محصولات                          
-</button>  <button onclick="filterProducts('sets')">                          
-ست‌های زنانه                          
-</button>  <button onclick="filterProducts('sale')">                          
-🔥 تخفیف‌دار                          
-</button>  <button onclick="filterProducts('new')">                          
-🆕 جدیدها                          
-</button>  </div>  <div class="products" id="products">  <!-- محصول اول -->  <div                          
-class="product sets sale"                          
-data-price="350000"                          
->  <div class="badge">                          
-🔥 12٪ تخفیف ویژه                          
-</div>  <img                        
-src="product.jpg"                        
-alt="ست لباس زیر زنانه"  >   <button                    
-class="favorite"                    
-onclick="toggleFavorite(this)"  >   ♡                
-</button>  <button              
-class="details-btn"              
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات          
-</button>  <h2>                          
-ست لباس زیر زنانه                          
-</h2>  <label>                          
-سایز:                          
-</label>  <select class="size">  <option>کوچک (S)</option>                          
-<option>متوسط (M)</option>                          
-<option>بزرگ (L)</option>                          
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                          
-رنگ:                          
-</label>  <select class="color">  <option>مشکی</option>                          
-<option>سفید</option>                          
-<option>قرمز</option>                          
-<option>صورتی</option>  </select>  <p>  <del>                          
-400,000 تومان                          
-</del>  <strong>                          
-350,000 تومان                          
-</strong>  </p>  <button                        
-onclick="buyproductWithOptions(this,'ست لباس زیر زنانه',350000)"  >   خرید محصول                    
-</button>  </div>  <!-- محصول دوم -->  <div                          
-class="product sets"                          
-data-price="520000"                          
->  <img                        
-src="product3.jpg"                        
-alt="ست شیک زنانه"  >   <button                    
-class="favorite"                    
-onclick="toggleFavorite(this)"  >   ♡                
-</button>  <button              
-class="details-btn"              
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات          
-</button>  <h2>                          
-ست شیک زنانه                          
-</h2>  <label>                          
-سایز:                          
-</label>  <select class="size">  <option>کوچک (S)</option>                          
-<option>متوسط (M)</option>                          
-<option>بزرگ (L)</option>                          
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                          
-رنگ:                          
-</label>  <select class="color">  <option>مشکی</option>                          
-<option>سفید</option>                          
-<option>قرمز</option>                          
-<option>صورتی</option>  </select>  <p>  <strong>                          
-520,000 تومان                          
-</strong>  </p>  <button                        
-onclick="buyproductWithOptions(this,'ست شیک زنانه',520000)"  >   خرید محصول                    
-</button>  </div>  <!-- محصول سوم -->  <div                          
-class="product sets new"                          
-data-price="450000"                          
->  <img                        
-src="product2.jpg"                        
-alt="ست جدید زنانه"  >   <button                    
-class="favorite"                    
-onclick="toggleFavorite(this)"  >   ♡                
-</button>  <button              
-class="details-btn"              
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات          
-</button>  <h2>                          
-ست جدید زنانه                          
-</h2>  <label>                          
-سایز:                          
-</label>  <select class="size">  <option>کوچک (S)</option>                          
-<option>متوسط (M)</option>                          
-<option>بزرگ (L)</option>                          
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                          
-رنگ:                          
-</label>  <select class="color">  <option>مشکی</option>                          
-<option>سفید</option>                          
-<option>قرمز</option>                          
-<option>صورتی</option>  </select>  <p>  <strong>                          
-450,000 تومان                          
-</strong>  </p>  <button                        
-onclick="buyproductWithOptions(this,'ست جدید زنانه',450000)"  >   خرید محصول                    
-</button>  </div>  </div>  <!-- سبد خرید -->  <div class="cart-box" id="cartBox">  <h2>                          
-🛒 سبد خرید                          
-</h2>  <div id="cartItems"></div>  <div class="cart-total">  مبلغ کل:  <span id="cartTotal">                          
-0 تومان                          
-</span>  </div>  <button onclick="clearCart()">                          
-🗑️ خالی کردن سبد                          
-</button>  </div>  <!-- سفارش -->  <div class="customer-box">  <h2>                          
-اطلاعات مشتری                          
-</h2>  <input                        
-type="text"                        
-id="customerName"                        
-placeholder="نام و نام خانوادگی"  >   <br><br>  <input                  
-type="tel"                  
-id="customerPhone"                  
-placeholder="شماره موبایل"  >   <br><br>  <textarea                          
-id="customerAddress"                          
-placeholder="آدرس کامل"                          
-></textarea>  <br><br>  <h3>      روش پرداخت  </h3>  <label>  <input        type="radio"  name="payment"  value="online"            
-onchange="showPaymentBox()"  >   پرداخت آنلاین  </label>  <br><br>  <label>  <input          
-type="radio"          
-name="payment"          
-value="cash"          
-onchange="hidePaymentBox()"  >   پرداخت در محل  </label>  <br><br>  <button onclick="submitOrder()">                          
-ثبت سفارش                          
-</button>  <div                          
-id="paymentBox"                          
-style="display:none;"                          
->  <h3>                          
-💳 پرداخت آنلاین                          
-</h3>  <p>                          
-مبلغ قابل پرداخت:                          
-</p>  <strong id="paymentAmount">                          
-</strong>  <br><br>  <button onclick="payNow()">                          
-پرداخت                          
-</button>  </div>  </div>  <!-- نتیجه سفارش -->  <div                          
-class="order-success"                          
-id="orderSuccess"                          
->  <h2>                          
-✅ سفارش شما ثبت شد                          
-</h2>  <p id="successText"></p>  </div>  <!-- تماس -->  <div class="contact-box" id="contact">  <h2>                          
-📞 تماس با ما                          
-</h2>  <p>                          
-برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸                          
-</p>  <p>                          
-📱 تلفن: 09917895945                          
-</p>  <p>                          
-💬 واتساپ: پاسخگویی به سفارش‌ها                          
-</p>  <a                        
-href="https://api.whatsapp.com/send?phone=989917895945"                        
-target="_blank"                        
-style="                        
-display:inline-block;                        
-padding:12px 25px;                        
-font-size:18px;                        
-background:#d6336c;                        
-color:white;                        
-text-decoration:none;                        
-border-radius:10px;                        
-"  >   💬 پیام در واتساپ                    
-</a>  </div>  <!-- پنجره جزئیات -->  <div                          
-class="product-modal"                          
-id="productModal"                          
->  <div class="product-modal-content">  <button                        
-class="close-modal"                        
-onclick="closeProductDetails()"  >   ×                    
-</button>  <img                  
-id="modalImage"                  
-src=""                  
-alt="محصول"  >   <h2 id="modalTitle"></h2>  <p id="modalDescription"></p>  <div                          
-class="modal-price"                          
-id="modalPrice"                          
-></div>  <br>  <label>                          
-سایز:                          
-</label>  <select                        
-class="modal-select"                        
-id="modalSize"  >   <option>کوچک (S)</option>                          
-<option>متوسط (M)</option>                          
-<option>بزرگ (L)</option>                          
-<option>خیلی بزرگ (XL)</option>  </select>  <br>  <label>                          
-رنگ:                          
-</label>  <select                        
-class="modal-select"                        
-id="modalColor"  >   <option>مشکی</option>                          
-<option>سفید</option>                          
-<option>قرمز</option>                          
-<option>صورتی</option>  </select>  <br><br>  <button onclick="addModalProductToCart()">                          
-🛒 افزودن به سبد خرید                          
-</button>  </div>  </div>            
-<!-- ===== PROFESSIONAL FOOTER ===== -->  <footer class="site-footer">  <div class="footer-content">    <div class="footer-box">      <h3>🌸 mimi shop</h3>        <p>          
-    فروشگاه آنلاین لباس زیر زنانه          
-    با انتخابی زیبا، کیفیت مناسب          
-    و تجربه خرید آسان 💕          
-</p>  </div>      <div class="footer-box">      <h3>🔗 دسترسی سریع</h3>        <div class="footer-links">        <a href="#">          
-    🏠 خانه          
-</a>          <a href="#products">          
-    🛍️ محصولات          
-</a>          <a href="#cartBox">          
-    🛒 سبد خرید          
-</a>          <a href="#contact">          
-    📞 تماس با ما          
-</a>  </div>  </div>      <div class="footer-box">      <h3>📞 ارتباط با ما</h3>        <p>          
-    📱 09917895945          
-</p>        <p>          
-    💬 پاسخگویی در واتساپ          
-</p>        <a  
-class="footer-whatsapp"  
-href="https://api.whatsapp.com/send?phone=989917895945"  
-target="_blank"  > 
-
-💬 پیام در واتساپ
-
-</a>  </div>  </div>    <!-- ویژگی‌های فروشگاه -->    <div class="footer-features">    <div class="footer-feature">      <strong>
+<header>  <div class="logo">                
+    🌸 mimi shop                
+</div>    <button class="menu-toggle" onclick="toggleMenu()">                
+    ☰                
+</button>    <nav>                
+    <a href="#">🏠 خانه</a>                
+    <a href="#products">🛍️ محصولات</a>                
+    <a href="#cartBox">🛒 سبد خرید</a>                
+    <a href="#contact">📞 تماس با ما</a>                
+</nav>  </header>                
+<section class="hero">  <div class="hero-content">  <div class="hero-text">  <span class="hero-badge">                              
+🌸 فروشگاه آنلاین لباس زیر زنانه                              
+</span>  <h1>                              
+به دنیای زیبای                              
+<span>mimi shop</span>                              
+خوش آمدید 💕                              
+</h1>  <p>                              
+جدیدترین مدل‌های لباس زیر زنانه                              
+با کیفیت عالی و طراحی زیبا                              
+</p>  <div class="hero-buttons">  <button onclick="scrollToProducts()">                              
+🛍️ مشاهده محصولات                              
+</button>  <button class="hero-cart" onclick="scrollToCart()">                              
+🛒 سبد خرید                              
+</button>  </div>  </div>    </div>                          
+</section>          
+<!-- ===== SPECIAL OFFER ===== -->  <section class="special-offer">    <h2>🔥 فروش ویژه mimi shop</h2>    <p>                        
+    فرصت محدود برای خرید محصولات منتخب با تخفیف ویژه 💕                        
+</p>    <div class="countdown" id="countdown">    <div class="time-box">                        
+    <strong id="days">00</strong>                        
+    <span>روز</span>                        
+</div>      <div class="time-box">                        
+    <strong id="hours">00</strong>                        
+    <span>ساعت</span>                        
+</div>      <div class="time-box">                        
+    <strong id="minutes">00</strong>                        
+    <span>دقیقه</span>                        
+</div>      <div class="time-box">                        
+    <strong id="seconds">00</strong>                        
+    <span>ثانیه</span>                        
+</div>  </div>  </section>                     
+  <!-- ===== SHOP STATUS ===== -->  <div class="shop-status">  <div>                    
+    🛒                    
+    <strong id="cart">0</strong>                    
+    <span>محصول در سبد</span>                    
+</div>    <div>                    
+    💰                    
+    <strong id="total">0 تومان</strong>                    
+    <span>مبلغ کل</span>                    
+</div>  </div>                       
+<div class="search-box">              
+<!-- ===== TRUST FEATURES ===== -->  <section class="trust-section">  <div class="trust-card">    <div class="trust-icon">            
+    🚚            
+</div>      <h3>            
+    ارسال سریع            
+</h3>      <p>            
+    سفارش شما با سرعت و دقت آماده ارسال می‌شود.            
+</p>  </div>    <div class="trust-card">    <div class="trust-icon">            
+    💎            
+</div>      <h3>            
+    کیفیت محصولات            
+</h3>      <p>            
+    انتخاب محصولات با کیفیت و طراحی زیبا.            
+</p>  </div>    <div class="trust-card">    <div class="trust-icon">            
+    💬            
+</div>      <h3>            
+    پشتیبانی            
+</h3>      <p>            
+    برای سوالات و سفارش‌ها از طریق واتساپ با ما در ارتباط باشید.            
+</p>  </div>  </section>            
+<input                            
+type="text"                            
+id="searchInput"                            
+placeholder="🔍 جستجوی محصول..."                            
+oninput="searchProducts()"  >   <select id="sortProducts" onchange="sortProducts()">  <option value="default">                        
+مرتب‌سازی محصولات  </option>  <option value="cheap">                              
+ارزان‌ترین                              
+</option>  <option value="expensive">                              
+گران‌ترین                              
+</option>  </select>  </div>  <div class="products-section-title">  <h2>                              
+🛍️ محصولات mimi shop                              
+</h2>  <p>                              
+جدیدترین مدل‌ها را ببینید و محصول مورد علاقه‌تان را انتخاب کنید 💕                              
+</p>  </div>  <div class="category-buttons">  <button onclick="filterProducts('all')">                              
+همه محصولات                              
+</button>  <button onclick="filterProducts('sets')">                              
+ست‌های زنانه                              
+</button>  <button onclick="filterProducts('sale')">                              
+🔥 تخفیف‌دار                              
+</button>  <button onclick="filterProducts('new')">                              
+🆕 جدیدها                              
+</button>  </div>  <div class="products" id="products">  <!-- محصول اول -->  <div                              
+class="product sets sale"                              
+data-price="350000"                              
+>  <div class="badge">                              
+🔥 12٪ تخفیف ویژه                              
+</div>  <img                            
+src="product.jpg"                            
+alt="ست لباس زیر زنانه"  >   <button                        
+class="favorite"                        
+onclick="toggleFavorite(this)"  >   ♡                    
+</button>  <button                  
+class="details-btn"                  
+onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات              
+</button>  <h2>                              
+ست لباس زیر زنانه                              
+</h2>  <label>                              
+سایز:                              
+</label>  <select class="size">  <option>کوچک (S)</option>                              
+<option>متوسط (M)</option>                              
+<option>بزرگ (L)</option>                              
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                              
+رنگ:                              
+</label>  <select class="color">  <option>مشکی</option>                              
+<option>سفید</option>                              
+<option>قرمز</option>                              
+<option>صورتی</option>  </select>  <p>  <del>                              
+400,000 تومان                              
+</del>  <strong>                              
+350,000 تومان                              
+</strong>  </p>  <button                            
+onclick="buyproductWithOptions(this,'ست لباس زیر زنانه',350000)"  >   خرید محصول                        
+</button>  </div>  <!-- محصول دوم -->  <div                              
+class="product sets"                              
+data-price="520000"                              
+>  <img                            
+src="product3.jpg"                            
+alt="ست شیک زنانه"  >   <button                        
+class="favorite"                        
+onclick="toggleFavorite(this)"  >   ♡                    
+</button>  <button                  
+class="details-btn"                  
+onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات              
+</button>  <h2>                              
+ست شیک زنانه                              
+</h2>  <label>                              
+سایز:                              
+</label>  <select class="size">  <option>کوچک (S)</option>                              
+<option>متوسط (M)</option>                              
+<option>بزرگ (L)</option>                              
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                              
+رنگ:                              
+</label>  <select class="color">  <option>مشکی</option>                              
+<option>سفید</option>                              
+<option>قرمز</option>                              
+<option>صورتی</option>  </select>  <p>  <strong>                              
+520,000 تومان                              
+</strong>  </p>  <button                            
+onclick="buyproductWithOptions(this,'ست شیک زنانه',520000)"  >   خرید محصول                        
+</button>  </div>  <!-- محصول سوم -->  <div                              
+class="product sets new"                              
+data-price="450000"                              
+>  <img                            
+src="product2.jpg"                            
+alt="ست جدید زنانه"  >   <button                        
+class="favorite"                        
+onclick="toggleFavorite(this)"  >   ♡                    
+</button>  <button                  
+class="details-btn"                  
+onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات              
+</button>  <h2>                              
+ست جدید زنانه                              
+</h2>  <label>                              
+سایز:                              
+</label>  <select class="size">  <option>کوچک (S)</option>                              
+<option>متوسط (M)</option>                              
+<option>بزرگ (L)</option>                              
+<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                              
+رنگ:                              
+</label>  <select class="color">  <option>مشکی</option>                              
+<option>سفید</option>                              
+<option>قرمز</option>                              
+<option>صورتی</option>  </select>  <p>  <strong>                              
+450,000 تومان                              
+</strong>  </p>  <button                            
+onclick="buyproductWithOptions(this,'ست جدید زنانه',450000)"  >   خرید محصول                        
+</button>  </div>  </div>  <!-- سبد خرید -->  <div class="cart-box" id="cartBox">  <h2>                              
+🛒 سبد خرید                              
+</h2>  <div id="cartItems"></div>  <div class="cart-total">  مبلغ کل:  <span id="cartTotal">                              
+0 تومان                              
+</span>  </div>  <button onclick="clearCart()">                              
+🗑️ خالی کردن سبد                              
+</button>  </div>  <!-- سفارش -->  <div class="customer-box">  <h2>                              
+اطلاعات مشتری                              
+</h2>  <input                            
+type="text"                            
+id="customerName"                            
+placeholder="نام و نام خانوادگی"  >   <br><br>  <input                      
+type="tel"                      
+id="customerPhone"                      
+placeholder="شماره موبایل"  >   <br><br>  <textarea                              
+id="customerAddress"                              
+placeholder="آدرس کامل"                              
+></textarea>  <br><br>  <h3>      روش پرداخت  </h3>  <label>  <input        type="radio"  name="payment"  value="online"                
+onchange="showPaymentBox()"  >   پرداخت آنلاین  </label>  <br><br>  <label>  <input              
+type="radio"              
+name="payment"              
+value="cash"              
+onchange="hidePaymentBox()"  >   پرداخت در محل  </label>  <br><br>  <button onclick="submitOrder()">                              
+ثبت سفارش                              
+</button>  <div                              
+id="paymentBox"                              
+style="display:none;"                              
+>  <h3>                              
+💳 پرداخت آنلاین                              
+</h3>  <p>                              
+مبلغ قابل پرداخت:                              
+</p>  <strong id="paymentAmount">                              
+</strong>  <br><br>  <button onclick="payNow()">                              
+پرداخت                              
+</button>  </div>  </div>  <!-- نتیجه سفارش -->  <div                              
+class="order-success"                              
+id="orderSuccess"                              
+>  <h2>                              
+✅ سفارش شما ثبت شد                              
+</h2>  <p id="successText"></p>  </div>  <!-- تماس -->  <div class="contact-box" id="contact">  <h2>                              
+📞 تماس با ما                              
+</h2>  <p>                              
+برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸                              
+</p>  <p>                              
+📱 تلفن: 09917895945                              
+</p>  <p>                              
+💬 واتساپ: پاسخگویی به سفارش‌ها                              
+</p>  <a                            
+href="https://api.whatsapp.com/send?phone=989917895945"                            
+target="_blank"                            
+style="                            
+display:inline-block;                            
+padding:12px 25px;                            
+font-size:18px;                            
+background:#d6336c;                            
+color:white;                            
+text-decoration:none;                            
+border-radius:10px;                            
+"  >   💬 پیام در واتساپ                        
+</a>  </div>  <!-- پنجره جزئیات -->  <div                              
+class="product-modal"                              
+id="productModal"                              
+>  <div class="product-modal-content">  <button                            
+class="close-modal"                            
+onclick="closeProductDetails()"  >   ×                        
+</button>  <img                      
+id="modalImage"                      
+src=""                      
+alt="محصول"  >   <h2 id="modalTitle"></h2>  <p id="modalDescription"></p>  <div                              
+class="modal-price"                              
+id="modalPrice"                              
+></div>  <br>  <label>                              
+سایز:                              
+</label>  <select                            
+class="modal-select"                            
+id="modalSize"  >   <option>کوچک (S)</option>                              
+<option>متوسط (M)</option>                              
+<option>بزرگ (L)</option>                              
+<option>خیلی بزرگ (XL)</option>  </select>  <br>  <label>                              
+رنگ:                              
+</label>  <select                            
+class="modal-select"                            
+id="modalColor"  >   <option>مشکی</option>                              
+<option>سفید</option>                              
+<option>قرمز</option>                              
+<option>صورتی</option>  </select>  <br><br>  <button onclick="addModalProductToCart()">                              
+🛒 افزودن به سبد خرید                              
+</button>  </div>  </div>                
+<!-- ===== PROFESSIONAL FOOTER ===== -->  <footer class="site-footer">  <div class="footer-content">    <div class="footer-box">      <h3>🌸 mimi shop</h3>        <p>              
+    فروشگاه آنلاین لباس زیر زنانه              
+    با انتخابی زیبا، کیفیت مناسب              
+    و تجربه خرید آسان 💕              
+</p>  </div>      <div class="footer-box">      <h3>🔗 دسترسی سریع</h3>        <div class="footer-links">        <a href="#">              
+    🏠 خانه              
+</a>          <a href="#products">              
+    🛍️ محصولات              
+</a>          <a href="#cartBox">              
+    🛒 سبد خرید              
+</a>          <a href="#contact">              
+    📞 تماس با ما              
+</a>  </div>  </div>      <div class="footer-box">      <h3>📞 ارتباط با ما</h3>        <p>              
+    📱 09917895945              
+</p>        <p>              
+    💬 پاسخگویی در واتساپ              
+</p>        <a      
+class="footer-whatsapp"      
+href="https://api.whatsapp.com/send?phone=989917895945"      
+target="_blank"  >   💬 پیام در واتساپ  </a>  </div>  </div>    <!-- ویژگی‌های فروشگاه -->    <div class="footer-features">    <div class="footer-feature">      <strong>
 🚚 ارسال سریع
 </strong>        <span>
 ارسال سفارش‌ها در سریع‌ترین زمان
