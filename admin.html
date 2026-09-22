@@ -1,417 +1,363 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت mimi shop</title>  <style>  
-  
-*{  
-box-sizing:border-box;  
-}  
-  
-body{  
-margin:0;  
-font-family:Arial,sans-serif;  
-background:#fff5f8;  
-color:#333;  
-}  
-  
-.admin-header{  
-background:#d6336c;  
-color:white;  
-padding:25px;  
-text-align:center;  
-box-shadow:0 5px 20px rgba(0,0,0,.1);  
-}  
-  
-.admin-header h1{  
-margin:0;  
-}  
-  
-.admin-container{  
-width:90%;  
-max-width:1000px;  
-margin:30px auto;  
-}  
-  
-.admin-card{  
-background:white;  
-padding:25px;  
-margin-bottom:25px;  
-border-radius:20px;  
-border:1px solid #f3c4d5;  
-box-shadow:0 8px 25px rgba(214,51,108,.08);  
-}  
-  
-.admin-card h2{  
-color:#d6336c;  
-margin-top:0;  
-}  
-  
-.form-group{  
-margin-bottom:18px;  
-text-align:right;  
-}  
-  
-.form-group label{  
-display:block;  
-margin-bottom:7px;  
-font-weight:bold;  
-}  
-  
-.form-group input,  
-.form-group textarea,  
-.form-group select{  
-width:100%;  
-padding:13px;  
-border:1px solid #f3c4d5;  
-border-radius:10px;  
-font-size:16px;  
-}  
-  
-.form-group textarea{  
-height:120px;  
-resize:vertical;  
-}  
-  
-.admin-button{  
-background:#d6336c;  
-color:white;  
-border:none;  
-padding:13px 25px;  
-border-radius:10px;  
-font-size:17px;  
-cursor:pointer;  
-}  
-  
-.admin-button:hover{  
-background:#b52b5a;  
-}  
-  
-.discount-box{  
-background:#fff0f5;  
-padding:20px;  
-border-radius:15px;  
-border:1px solid #f3c4d5;  
-margin-top:15px;  
-}  
-  
-.banner-list{  
-display:grid;  
-grid-template-columns:repeat(3,1fr);  
-gap:15px;  
-}  
-  
-.banner-item{  
-border:1px solid #f3c4d5;  
-padding:10px;  
-border-radius:15px;  
-text-align:center;  
-}  
-  
-.banner-item img{  
-width:100%;  
-height:120px;  
-object-fit:cover;  
-border-radius:10px;  
-}  
-  
-@media(max-width:600px){  
-  
-.admin-container{  
-width:94%;  
-}  
-  
-.banner-list{  
-grid-template-columns:1fr;  
-}  
-  
-}  
-  
-</style>  </head>  <body>  <header class="admin-header">  <h1>🌸 پنل مدیریت mimi shop</h1>  <p>مدیریت فروشگاه</p>  </header>  <div class="admin-container">  <!-- مدیریت محصول -->  <div class="admin-card">  <h2>🛍️ مدیریت محصولات</h2>  <div class="form-group">  
-<label>انتخاب محصول</label>  <select id="productSelect">  
-<option value="0">ست لباس زیر زنانه</option>  
-<option value="1">ست شیک زنانه</option>  
-<option value="2">ست جدید زنانه</option>  
-</select>  </div>  <div class="form-group">  
-<label>نام محصول</label>  
-<input type="text" id="productName">  
-</div>  <div class="form-group">  
-<label>توضیحات محصول</label>  
-<textarea id="productDescription"></textarea>  
-</div>  <div class="form-group">  
-<label>قیمت محصول (تومان)</label>  
-<input type="number" id="productPrice">  
-</div>  <div class="form-group">  
-<label>عکس محصول</label>  
-<input type="file" id="productImage" accept="image/*">  
-</div>  <button class="admin-button" onclick="saveProduct()">  
-💾 ذخیره تغییرات  
-</button>  <div id="productStatus" class="status"></div>  </div>  <div class="admin-card">  <h2>🔥 مدیریت تخفیف</h2>  <div class="form-group">  <label>انتخاب محصول</label>
+<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>    <meta charset="UTF-8">      <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت mimi shop</title>  <style>    *{  box-sizing:border-box;
+}
 
-<select id="discountProduct">  <option>  
-ست لباس زیر زنانه  
-</option>  <option>  
-ست شیک زنانه  
-</option>  <option>  
-ست جدید زنانه  
-</option>  </select>  </div>  <div class="form-group">  <label>درصد تخفیف</label>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#fff5f8;
+color:#333;
+}
 
-<input
-type="number"
-id="discountPercent"
-placeholder="مثلاً 20"
-min="0"
-max="100"
+.admin-header{
+background:#d6336c;
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
 
-> 
+.admin-header h1{
+margin:0;
+}
 
-</div>  <div class="discount-box">  <div class="form-group">  <label>تاریخ پایان تخفیف</label>
+.admin-container{
+width:90%;
+max-width:1000px;
+margin:30px auto;
+}
 
-<input
-type="datetime-local"
-id="discountEnd"
+.admin-card{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:20px;
+border:1px solid #f3c4d5;
+box-shadow:0 8px 25px rgba(214,51,108,.08);
+}
 
-> 
+.admin-card h2{
+color:#d6336c;
+margin-top:0;
+}
 
-</div>  <button
-class="admin-button"
-onclick="saveDiscount()"
+.form-group{
+margin-bottom:18px;
+text-align:right;
+}
 
-> 
+.form-group label{
+display:block;
+margin-bottom:7px;
+font-weight:bold;
+}
 
-🔥 فعال کردن تخفیف
+.form-group input,
+.form-group textarea,
+.form-group select{
+width:100%;
+padding:13px;
+border:1px solid #f3c4d5;
+border-radius:10px;
+font-size:16px;
+}
 
-</button>  </div>  </div>  <!-- بنر -->  <div class="admin-card">  <h2>🖼️ مدیریت بنرهای بالای سایت</h2>  <div class="banner-list">  <div class="banner-item">  <img src="banner1.jpg">  <p>بنر ۱</p>  <input
+.form-group textarea{
+height:120px;
+resize:vertical;
+}
+
+.admin-button{
+background:#d6336c;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:10px;
+font-size:17px;
+cursor:pointer;
+}
+
+.admin-button:hover{
+background:#b52b5a;
+}
+
+.discount-box{
+background:#fff0f5;
+padding:20px;
+border-radius:15px;
+border:1px solid #f3c4d5;
+margin-top:15px;
+}
+
+.banner-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.banner-item{
+border:1px solid #f3c4d5;
+padding:10px;
+border-radius:15px;
+text-align:center;
+}
+
+.banner-item img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:10px;
+}
+
+@media(max-width:600px){
+
+.admin-container{
+width:94%;
+}
+
+.banner-list{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>  </head>  <body>  <header class="admin-header">  <h1>🌸 پنل مدیریت mimi shop</h1>  <p>مدیریت فروشگاه</p>  </header>  <div class="admin-container">  <!-- مدیریت محصول -->  <div class="admin-card">  <h2>🛍️ مدیریت محصولات</h2>  <div class="form-group">
+<label>انتخاب محصول</label>  <select id="productSelect">
+
+<option value="0">ست لباس زیر زنانه</option>        
+<option value="1">ست شیک زنانه</option>        
+<option value="2">ست جدید زنانه</option>        
+</select>  </div>  <div class="form-group">        
+<label>نام محصول</label>        
+<input type="text" id="productName">        
+</div>  <div class="form-group">        
+<label>توضیحات محصول</label>        
+<textarea id="productDescription"></textarea>        
+</div>  <div class="form-group">        
+<label>قیمت محصول (تومان)</label>        
+<input type="number" id="productPrice">        
+</div>  <div class="form-group">        
+<label>عکس محصول</label>        
+<input type="file" id="productImage" accept="image/*">        
+</div>  <button class="admin-button" onclick="saveProduct()">        
+💾 ذخیره تغییرات        
+</button>  <div id="productStatus" class="status"></div>  </div>  <div class="admin-card">  <h2>🔥 مدیریت تخفیف</h2>  <div class="form-group">  <label>انتخاب محصول</label>  <select id="discountProduct">  <option>    
+ست لباس زیر زنانه  </option>  <option>        
+ست شیک زنانه        
+</option>  <option>        
+ست جدید زنانه        
+</option>  </select>  </div>  <div class="form-group">  <label>درصد تخفیف</label>  <input    
+type="number"    
+id="discountPercent"    
+placeholder="مثلاً 20"    
+min="0"    
+max="100"  >   </div>  <div class="discount-box">  <div class="form-group">  <label>تاریخ پایان تخفیف</label>  <input    
+type="datetime-local"    
+id="discountEnd"  >   </div>  <button      
+class="admin-button"      
+onclick="saveDiscount()"  >   🔥 فعال کردن تخفیف  </button>  </div>  </div>  <!-- بنر -->  <div class="admin-card">  <h2>🖼️ مدیریت بنرهای بالای سایت</h2>  <div class="banner-list">  <div class="banner-item">  <img src="banner1.jpg">  <p>بنر ۱</p>  <input
 type="file"
 accept="image/*"
 
 > 
 
-</div>  <div class="banner-item">  <img src="banner2.jpg">  <p>بنر ۲</p>  <input
-type="file"
-accept="image/*"
+</div>  <div class="banner-item">  <img src="banner2.jpg">  <p>بنر ۲</p>  <input      
+type="file"      
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner3.jpg">  <p>بنر ۳</p>  <input      
+type="file"      
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner4.jpg">  <p>بنر ۴</p>  <input      
+type="file"      
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner5.jpg">  <p>بنر ۵</p>  <input      
+type="file"      
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner6.jpg">  <p>بنر ۶</p>  <input      
+type="file"      
+accept="image/*"  >   </div>  </div>  </div>  <!-- تایمر -->  <div class="admin-card">  <h2>⏰ مدیریت تایمر فروش ویژه</h2>  <div class="form-group">  <label>        
+تاریخ و زمان پایان فروش ویژه        
+</label>  <input      
+type="datetime-local"      
+id="offerEnd"  >   </div>  <button      
+class="admin-button"      
+onclick="saveOfferTimer()"  >   ⏰ ذخیره تایمر  </button>  </div>  </div>  <script>
 
-> 
+const defaultProducts = [
+{
+name: "ست لباس زیر زنانه",
+description: "ست زیبا و راحت زنانه",
+price: 350000,
+image: "product.jpg"
+},
+{
+name: "ست شیک زنانه",
+description: "ست شیک و جذاب زنانه",
+price: 520000,
+image: "product3.jpg"
+},
+{
+name: "ست جدید زنانه",
+description: "مدل جدید لباس زیر زنانه",
+price: 450000,
+image: "product2.jpg"
+}
+];
 
-</div>  <div class="banner-item">  <img src="banner3.jpg">  <p>بنر ۳</p>  <input
-type="file"
-accept="image/*"
+let adminProducts =
+JSON.parse(localStorage.getItem("mimiProducts")) ||
+defaultProducts;
 
-> 
+function loadProduct(){
 
-</div>  <div class="banner-item">  <img src="banner4.jpg">  <p>بنر ۴</p>  <input
-type="file"
-accept="image/*"
+const index =
+Number(document.getElementById("productSelect").value);
 
-> 
+const product = adminProducts[index];
 
-</div>  <div class="banner-item">  <img src="banner5.jpg">  <p>بنر ۵</p>  <input
-type="file"
-accept="image/*"
+document.getElementById("productName").value =
+product.name;
 
-> 
+document.getElementById("productDescription").value =
+product.description;
 
-</div>  <div class="banner-item">  <img src="banner6.jpg">  <p>بنر ۶</p>  <input
-type="file"
-accept="image/*"
+document.getElementById("productPrice").value =
+product.price;
+}
 
-> 
+document.getElementById("productSelect")
+.addEventListener("change", loadProduct);
 
-</div>  </div>  </div>  <!-- تایمر -->  <div class="admin-card">  <h2>⏰ مدیریت تایمر فروش ویژه</h2>  <div class="form-group">  <label>  
-تاریخ و زمان پایان فروش ویژه  
-</label>  <input
-type="datetime-local"
-id="offerEnd"
+function saveProduct(){
 
-> 
+const index =
+Number(document.getElementById("productSelect").value);
 
-</div>  <button
-class="admin-button"
-onclick="saveOfferTimer()"
+const name =
+document.getElementById("productName").value.trim();
 
-> 
+const description =
+document.getElementById("productDescription").value.trim();
 
-⏰ ذخیره تایمر
+const price =
+Number(document.getElementById("productPrice").value);
 
-</button>  </div>  </div>  <script>  
-  
-const defaultProducts = [  
-  {  
-    name: "ست لباس زیر زنانه",  
-    description: "ست زیبا و راحت زنانه",  
-    price: 350000,  
-    image: "product.jpg"  
-  },  
-  {  
-    name: "ست شیک زنانه",  
-    description: "ست شیک و جذاب زنانه",  
-    price: 520000,  
-    image: "product3.jpg"  
-  },  
-  {  
-    name: "ست جدید زنانه",  
-    description: "مدل جدید لباس زیر زنانه",  
-    price: 450000,  
-    image: "product2.jpg"  
-  }  
-];  
-  
-let adminProducts =  
-  JSON.parse(localStorage.getItem("mimiProducts")) ||  
-  defaultProducts;  
-  
-function loadProduct(){  
-  
-  const index =  
-    Number(document.getElementById("productSelect").value);  
-  
-  const product = adminProducts[index];  
-  
-  document.getElementById("productName").value =  
-    product.name;  
-  
-  document.getElementById("productDescription").value =  
-    product.description;  
-  
-  document.getElementById("productPrice").value =  
-    product.price;  
-}  
-  
-document.getElementById("productSelect")  
-.addEventListener("change", loadProduct);  
-  
-  
-function saveProduct(){  
-  
-  const index =  
-    Number(document.getElementById("productSelect").value);  
-  
-  const name =  
-    document.getElementById("productName").value.trim();  
-  
-  const description =  
-    document.getElementById("productDescription").value.trim();  
-  
-  const price =  
-    Number(document.getElementById("productPrice").value);  
-  
-  const file =  
-    document.getElementById("productImage").files[0];  
-  
-  
-  if(!name || !price){  
-  
-    alert("⚠️ نام محصول و قیمت را وارد کن.");  
-  
-    return;  
-  }  
-  
-  
-  adminProducts[index].name = name;  
-  
-  adminProducts[index].description = description;  
-  
-  adminProducts[index].price = price;  
-  
-  
-  if(file){  
-  
-    const reader = new FileReader();  
-  
-    reader.onload = function(){  
-  
-      adminProducts[index].image =  
-        reader.result;  
-  
-      localStorage.setItem(  
-        "mimiProducts",  
-        JSON.stringify(adminProducts)  
-      );  
-  
-      showStatus(  
-        "productStatus",  
-        "✅ محصول با موفقیت ذخیره شد."  
-      );  
-  
-    };  
-  
-    reader.readAsDataURL(file);  
-  
-  }else{  
-  
-    localStorage.setItem(  
-      "mimiProducts",  
-      JSON.stringify(adminProducts)  
-    );  
-  
-    showStatus(  
-      "productStatus",  
-      "✅ محصول با موفقیت ذخیره شد."  
-    );  
-  }  
-  
-}  
-  
-  
-loadProduct();  
-  
-alert(  
-"✅ محصول ذخیره شد\n\n" +  
-"محصول: " + name +  
-"\nقیمت: " + price  
-);  
-  
-}  
-  
-  
-function saveDiscount(){  
-  
-let product =  
-document.getElementById("discountProduct").value;  
-  
-let percent =  
-document.getElementById("discountPercent").value;  
-  
-let end =  
-document.getElementById("discountEnd").value;  
-  
-if(!percent || !end){  
-  
-alert("⚠️ درصد تخفیف و زمان پایان را وارد کن.");  
-  
-return;  
-  
-}  
-  
-alert(  
-"🔥 تخفیف ثبت شد\n\n" +  
-"محصول: " + product +  
-"\nتخفیف: " + percent + "%" +  
-"\nپایان: " + end  
-);  
-  
-}  
-  
-  
-function saveOfferTimer(){  
-  
-let end =  
-document.getElementById("offerEnd").value;  
-  
-if(!end){  
-  
-alert("⚠️ زمان پایان را انتخاب کن.");  
-  
-return;  
-  
-}  
-  
-localStorage.setItem(  
-"offerEndTime",  
-new Date(end).getTime()  
-);  
-  
-alert("✅ تایمر فروش ویژه ذخیره شد.");  
-  
-}  
-  
-  
+const file =
+document.getElementById("productImage").files[0];
+
+if(!name || !price){
+
+alert("⚠️ نام محصول و قیمت را وارد کن.");
+
+return;
+
+}
+
+adminProducts[index].name = name;
+
+adminProducts[index].description = description;
+
+adminProducts[index].price = price;
+
+if(file){
+
+const reader = new FileReader();
+
+reader.onload = function(){
+
+adminProducts[index].image =
+reader.result;
+
+localStorage.setItem(
+"mimiProducts",
+JSON.stringify(adminProducts)
+);
+
+showStatus(
+"productStatus",
+"✅ محصول با موفقیت ذخیره شد."
+);
+
+};
+
+reader.readAsDataURL(file);
+
+}else{
+
+localStorage.setItem(
+"mimiProducts",
+JSON.stringify(adminProducts)
+);
+
+showStatus(
+"productStatus",
+"✅ محصول با موفقیت ذخیره شد."
+);
+
+}
+
+}
+
+function showStatus(id, message){
+
+const element = document.getElementById(id);
+
+element.innerText = message;
+element.style.color = "#d6336c";
+element.style.marginTop = "15px";
+element.style.fontWeight = "bold";
+
+}
+
+loadProduct();
+
+console.log(localStorage.getItem("mimiProducts"));
+
+function saveDiscount(){
+
+let product =
+document.getElementById("discountProduct").value;
+
+let percent =
+document.getElementById("discountPercent").value;
+
+let end =
+document.getElementById("discountEnd").value;
+
+if(!percent || !end){
+
+alert("⚠️ درصد تخفیف و زمان پایان را وارد کن.");
+
+return;
+
+}
+
+localStorage.setItem(
+"mimiDiscount",
+JSON.stringify({
+product: product,
+percent: Number(percent),
+end: new Date(end).getTime()
+})
+);
+alert("🔥تخفیف با موفقیت فعال شد.");
+}
+
+function saveOfferTimer(){
+
+let end =
+document.getElementById("offerEnd").value;
+
+if(!end){
+
+alert("⚠️ زمان پایان را انتخاب کن.");
+
+return;
+
+}
+
+localStorage.setItem(
+"offerEndTime",
+new Date(end).getTime()
+);
+
+alert("✅ تایمر فروش ویژه ذخیره شد.");
+
+}
+
 </script>  </body>  </html>
