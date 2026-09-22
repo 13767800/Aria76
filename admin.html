@@ -1,10 +1,4 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>    <meta charset="UTF-8">      <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت mimi shop</title>  <style>    *{  box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#fff5f8;
+<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>    <meta charset="UTF-8">      <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت mimi shop</title>  <style>    *{  box-sizing:border-box;  }  body{  margin:0;  font-family:Arial,sans-serif;  background:#fff5f8;
 color:#333;
 }
 
@@ -121,85 +115,137 @@ grid-template-columns:1fr;
 }
 
 </style>  </head>  <body>  <header class="admin-header">  <h1>🌸 پنل مدیریت mimi shop</h1>  <p>مدیریت فروشگاه</p>  </header>  <div class="admin-container">  <!-- مدیریت محصول -->  <div class="admin-card">  <h2>🛍️ مدیریت محصولات</h2>  <div class="form-group">
-<label>انتخاب محصول</label>  <select id="productSelect">
+<label>انتخاب محصول</label>
+<select id="productSelect">
 
-<option value="0">ست لباس زیر زنانه</option>        
-<option value="1">ست شیک زنانه</option>        
-<option value="2">ست جدید زنانه</option>        
-</select>  </div>  <div class="form-group">        
-<label>نام محصول</label>        
-<input type="text" id="productName">        
-</div>  <div class="form-group">        
-<label>توضیحات محصول</label>        
-<textarea id="productDescription"></textarea>        
-</div>  <div class="form-group">        
-<label>قیمت محصول (تومان)</label>        
-<input type="number" id="productPrice">        
-</div>  <div class="form-group">        
-<label>عکس محصول</label>        
-<input type="file" id="productImage" accept="image/*">        
-</div>  <button class="admin-button" onclick="saveProduct()">        
-💾 ذخیره تغییرات        
-</button>  <div id="productStatus" class="status"></div>  </div>  <div class="admin-card">  <h2>🔥 مدیریت تخفیف</h2>  <div class="form-group">  <label>انتخاب محصول</label>  <select id="discountProduct">  <option>    
-ست لباس زیر زنانه  </option>  <option>        
-ست شیک زنانه        
-</option>  <option>        
-ست جدید زنانه        
-</option>  </select>  </div>  <div class="form-group">  <label>درصد تخفیف</label>  <input    
-type="number"    
-id="discountPercent"    
-placeholder="مثلاً 20"    
-min="0"    
-max="100"  >   </div>  <div class="discount-box">  <div class="form-group">  <label>تاریخ پایان تخفیف</label>  <input    
-type="datetime-local"    
-id="discountEnd"  >   </div>  <button      
-class="admin-button"      
-onclick="saveDiscount()"  >   🔥 فعال کردن تخفیف  </button>  </div>  </div>  <!-- بنر -->  <div class="admin-card">  <h2>🖼️ مدیریت بنرهای بالای سایت</h2>  <div class="banner-list">  <div class="banner-item">  <img src="banner1.jpg">  <p>بنر ۱</p>  <input
-type="file"
-accept="image/*"
-
-> 
-
-</div>  <div class="banner-item">  <img src="banner2.jpg">  <p>بنر ۲</p>  <input      
-type="file"      
-accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner3.jpg">  <p>بنر ۳</p>  <input      
-type="file"      
-accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner4.jpg">  <p>بنر ۴</p>  <input      
-type="file"      
-accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner5.jpg">  <p>بنر ۵</p>  <input      
-type="file"      
-accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner6.jpg">  <p>بنر ۶</p>  <input      
-type="file"      
-accept="image/*"  >   </div>  </div>  </div>  <!-- تایمر -->  <div class="admin-card">  <h2>⏰ مدیریت تایمر فروش ویژه</h2>  <div class="form-group">  <label>        
-تاریخ و زمان پایان فروش ویژه        
-</label>  <input      
-type="datetime-local"      
-id="offerEnd"  >   </div>  <button      
-class="admin-button"      
-onclick="saveOfferTimer()"  >   ⏰ ذخیره تایمر  </button>  </div>  </div>  <script>
-
-const defaultProducts = [
-{
-name: "ست لباس زیر زنانه",
-description: "ست زیبا و راحت زنانه",
-price: 350000,
-image: "product.jpg"
-},
-{
-name: "ست شیک زنانه",
-description: "ست شیک و جذاب زنانه",
-price: 520000,
-image: "product3.jpg"
-},
-{
-name: "ست جدید زنانه",
-description: "مدل جدید لباس زیر زنانه",
-price: 450000,
-image: "product2.jpg"
-}
-];
-
-let adminProducts =
+<option value="0">🎀 ست گیپوری</option>      
+<option value="1">👙 ست سه تیکه ساتن</option>      
+<option value="2">💗 شورت لامبادا</option>      
+<option value="3">🎀 ست کاپدار</option>      
+<option value="4">💕 شورت فانتزی</option>      
+<option value="5">👙 سوتین تک</option>      
+<option value="6">🌸 ست تورگاز</option>      
+<option value="7">🌙 لباسخواب</option>      
+<option value="8">✨ نیم تنه</option>  </select>  </div>  <div class="form-group">                  
+<label>نام محصول</label>                  
+<input type="text" id="productName">                  
+</div>  <div class="form-group">                  
+<label>توضیحات محصول</label>                  
+<textarea id="productDescription"></textarea>                  
+</div>  <div class="form-group">                  
+<label>قیمت محصول (تومان)</label>                  
+<input type="number" id="productPrice">                  
+</div>         
+<div class="form-group">                  
+<label>عکس محصول</label>                  
+<input type="file" id="productImage" accept="image/*">                  
+</div>  <button class="admin-button" onclick="saveProduct()">                  
+💾 ذخیره تغییرات                  
+</button>  <div id="productStatus" class="status"></div>  </div>    
+<div class="admin-card">  <h2>🔥 مدیریت تخفیف</h2>  <div class="form-group">  <label>انتخاب محصول</label>    
+<select id="discountProduct">  <option value="gipouri">🎀 ست گیپوری</option>  
+<option value="satin">👙 ست سه تیکه ساتن</option>  
+<option value="lambada">💗 شورت لامبادا</option>  
+<option value="kapdar">🎀 ست کاپدار</option>  
+<option value="fantasy">💕 شورت فانتزی</option>  
+<option value="bra">👙 سوتین تک</option>  
+<option value="torgaz">🌸 ست تورگاز</option>  
+<option value="sleepwear">🌙 لباسخواب</option>  
+<option value="croptop">✨ نیم تنه</option>  </select>  
+</div>    
+<div class="form-group">  <label>درصد تخفیف</label>  <input              
+type="number"              
+id="discountPercent"              
+placeholder="مثلاً 20"              
+min="0"              
+max="100"  >   </div>  <div class="discount-box">      
+<div class="form-group">  <label>تاریخ پایان تخفیف</label>  <input              
+type="datetime-local"              
+id="discountEnd"  >   </div>  <button                
+class="admin-button"                
+onclick="saveDiscount()"  >   🔥 فعال کردن تخفیف  </button>  </div>  </div>  <!-- بنر -->  <div class="admin-card">  <h2>🖼️ مدیریت بنرهای بالای سایت</h2>  <div class="banner-list">  <div class="banner-item">  <img src="banner1.jpg">  <p>بنر ۱</p>  <input          
+type="file"          
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner2.jpg">  <p>بنر ۲</p>  <input                
+type="file"                
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner3.jpg">  <p>بنر ۳</p>  <input                
+type="file"                
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner4.jpg">  <p>بنر ۴</p>  <input                
+type="file"                
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner5.jpg">  <p>بنر ۵</p>  <input                
+type="file"                
+accept="image/*"  >   </div>  <div class="banner-item">  <img src="banner6.jpg">  <p>بنر ۶</p>  <input                
+type="file"                
+accept="image/*"  >   </div>  </div>  </div>  <!-- تایمر -->  <div class="admin-card">  <h2>⏰ مدیریت تایمر فروش ویژه</h2>  <div class="form-group">  <label>                  
+تاریخ و زمان پایان فروش ویژه                  
+</label>  <input                
+type="datetime-local"                
+id="offerEnd"  >   </div>  <button                
+class="admin-button"                
+onclick="saveOfferTimer()"  >   ⏰ ذخیره تایمر  </button>  </div>  </div>  <script>   const defaultProducts = [  
+{  
+name: "محصول ست گیپوری",  
+description: "توضیحات ست گیپوری",  
+price: 0,  
+image: "",  
+category: "gipouri"  
+},  
+{  
+name: "محصول ست سه تیکه ساتن",  
+description: "توضیحات ست سه تیکه ساتن",  
+price: 0,  
+image: "",  
+category: "satin"  
+},  
+{  
+name: "محصول شورت لامبادا",  
+description: "توضیحات شورت لامبادا",  
+price: 0,  
+image: "",  
+category: "lambada"  
+},  
+{  
+name: "محصول ست کاپدار",  
+description: "توضیحات ست کاپدار",  
+price: 0,  
+image: "",  
+category: "kapdar"  
+},  
+{  
+name: "محصول شورت فانتزی",  
+description: "توضیحات شورت فانتزی",  
+price: 0,  
+image: "",  
+category: "fantasy"  
+},  
+{  
+name: "محصول سوتین تک",  
+description: "توضیحات سوتین تک",  
+price: 0,  
+image: "",  
+category: "bra"  
+},  
+{  
+name: "محصول ست تورگاز",  
+description: "توضیحات ست تورگاز",  
+price: 0,  
+image: "",  
+category: "torgaz"  
+},  
+{  
+name: "محصول لباسخواب",  
+description: "توضیحات لباسخواب",  
+price: 0,  
+image: "",  
+category: "sleepwear"  
+},  
+{  
+name: "محصول نیم تنه",  
+description: "توضیحات نیم تنه",  
+price: 0,  
+image: "",  
+category: "croptop"  
+}  
+];  let adminProducts =
 JSON.parse(localStorage.getItem("mimiProducts")) ||
 defaultProducts;
 
@@ -218,6 +264,7 @@ product.description;
 
 document.getElementById("productPrice").value =
 product.price;
+
 }
 
 document.getElementById("productSelect")
@@ -227,6 +274,18 @@ function saveProduct(){
 
 const index =
 Number(document.getElementById("productSelect").value);
+
+const categories = [
+"gipouri",
+"satin",
+"lambada",
+"kapdar",
+"fantasy",
+"bra",
+"torgaz",
+"sleepwear",
+"croptop"
+];
 
 const name =
 document.getElementById("productName").value.trim();
@@ -251,8 +310,8 @@ return;
 adminProducts[index].name = name;
 
 adminProducts[index].description = description;
-
 adminProducts[index].price = price;
+adminProducts[index].category = categories[index];
 
 if(file){
 

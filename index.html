@@ -1,7 +1,4 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">    <head>      <meta charset="UTF-8">        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>mimi shop</title>  <style>    *{  box-sizing:border-box;  }      body{  margin:0;  text-align:center;  font-family:Arial,sans-serif;  color:#333;  background:#fff;  }  h1{  font-size:35px;  color:#d6336c;  }  button{  padding:12px 25px;  font-size:18px;  background-color:#d6336c;  color:white;  border:none;  border-radius:10px;  cursor:pointer;  transition:.3s;  }
-
-button:hover{
-background-color:#b52b5a;
+<!DOCTYPE html>  <html lang="fa" dir="rtl">    <head>      <meta charset="UTF-8">        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>mimi shop</title>  <style>    *{  box-sizing:border-box;  }      body{  margin:0;  text-align:center;  font-family:Arial,sans-serif;  color:#333;  background:#fff;  }  h1{  font-size:35px;  color:#d6336c;  }  button{  padding:12px 25px;  font-size:18px;  background-color:#d6336c;  color:white;  border:none;  border-radius:10px;  cursor:pointer;  transition:.3s;  }  button:hover{  background-color:#b52b5a;
 transform:translateY(-2px);
 }
 
@@ -1189,418 +1186,329 @@ font-size:10px;
 
 </style>  </head>  <body>
 
-<header>  <div class="logo">                                                        
-    🌸 mimi shop                                                        
-</div>    <button class="menu-toggle" onclick="toggleMenu()">                                                        
-    ☰                                                        
-</button>    <nav>                                                        
-    <a href="#">🏠 خانه</a>                                                        
-    <a href="#products">🛍️ محصولات</a>                                                        
-    <a href="#cartBox">🛒 سبد خرید</a>                                                        
-    <a href="#contact">📞 تماس با ما</a>                                                        
-</nav>                                    
-</header>                               
-<!-- ===== BANNER SLIDER ===== -->   <div class="banner-slider">                              
-<img id="bannerImage" src="banner1.jpg" alt="تبلیغ mimi shop">                            
-</div>                              
-<section class="hero">                                    
-<div class="hero-content">                                    
-<div class="hero-text">                                    
-<span class="hero-badge">                                                                      
-🌸 فروشگاه آنلاین لباس زیر زنانه                                                                      
-</span>  <h1>                                                                      
-به دنیای زیبای                                                                      
-<span>mimi shop</span>                                                                      
-خوش آمدید 💕                                                                      
-</h1>  <p>                                                                      
-جدیدترین مدل‌های لباس زیر زنانه                                                                      
-با کیفیت عالی و طراحی زیبا                                                                      
-</p>  <div class="hero-buttons">  <button onclick="scrollToProducts()">                                                                      
-🛍️ مشاهده محصولات                                                                      
-</button>  <button class="hero-cart" onclick="scrollToCart()">                                                                      
-🛒 سبد خرید                                                                      
-</button>  </div>  </div>    </div>                                                                  
-</section>                                                  
-<!-- ===== SPECIAL OFFER ===== -->  <section class="special-offer">    <h2>🔥 فروش ویژه mimi shop</h2>    <p>                                                                
-    فرصت محدود برای خرید محصولات منتخب با تخفیف ویژه 💕                                                                
-</p>    <div class="countdown" id="countdown">    <div class="time-box">                                                                
-    <strong id="days">00</strong>                                                                
-    <span>روز</span>                                                                
-</div>      <div class="time-box">                                                                
-    <strong id="hours">00</strong>                                                                
-    <span>ساعت</span>                                                                
-</div>      <div class="time-box">                                                                
-    <strong id="minutes">00</strong>                                                                
-    <span>دقیقه</span>                                                                
-</div>      <div class="time-box">                                                                
-    <strong id="seconds">00</strong>                                                                
-    <span>ثانیه</span>                                                                
-</div>  </div>  </section>                                                             
-  <!-- ===== SHOP STATUS ===== -->  <div class="shop-status">  <div>                                                            
-    🛒                                                            
-    <strong id="cart">0</strong>                                                            
-    <span>محصول در سبد</span>                                                            
-</div>    <div>                                                            
-    💰                                                            
-    <strong id="total">0 تومان</strong>                                                            
-    <span>مبلغ کل</span>                                                            
-</div>  </div>                                                               
-<div class="search-box">  <input    
-type="text"    
-id="searchInput"    
-placeholder="🔍 جستجوی محصول..."    
-oninput="searchProducts()"  >   <select id="sortProducts" onchange="sortProducts()">      
-<option value="default">مرتب‌سازی محصولات</option>      
-<option value="cheap">ارزان‌ترین</option>      
-<option value="expensive">گران‌ترین</option>      
-</select>  </div>               
-<!-- ===== TRUST FEATURES ===== -->  <section class="trust-section">      
-<div class="trust-card">        
-<div class="trust-icon">                                                    
-    🚚                                                    
-</div>      <h3>                                                    
-    ارسال سریع                                                    
-</h3>      <p>                                                    
-    سفارش شما با سرعت و دقت آماده ارسال می‌شود.                                                    
-</p>  </div>    <div class="trust-card">    <div class="trust-icon">                                                    
-    💎                                                    
-</div>      <h3>                                                    
-    کیفیت محصولات                                                    
-</h3>      <p>                                                    
-    انتخاب محصولات با کیفیت و طراحی زیبا.                                                    
-</p>  </div>    <div class="trust-card">    <div class="trust-icon">                                                    
-    💬                                                    
-</div>      <h3>                                                    
-    پشتیبانی                                                    
-</h3>      <p>                                                    
-    برای سوالات و سفارش‌ها از طریق واتساپ با ما در ارتباط باشید.                                                    
-</p>  </div>  </section>                                                    
-<div class="products-section-title">  <h2>                                                                      
-🛍️ محصولات mimi shop                                                                      
-</h2>  <p>                                                                      
-جدیدترین مدل‌ها را ببینید و محصول مورد علاقه‌تان را انتخاب کنید 💕                                                                      
-</p>  </div>    <!-- ===== دسته بندی محصولات ===== -->  <section class="categories-section">  <div class="categories-heading">    <div class="cat-title">          
-    <span>🌸</span>          
-    <h2>دسته بندی محصولات</h2>          
-</div>      <p>          
-    دسته مورد علاقه‌ات رو انتخاب کن و مدل‌های موجود رو ببین 💕          
-</p>  </div>    <div class="categories-grid">    <!-- ست گیپوری -->      <button class="category-card"          
-onclick="filterCategory('gipouri')">  <div class="category-icon">          
-    🎀          
-</div>        <h3>          
-    ست گیپوری          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- ست سه تیکه ساتن -->      <button class="category-card"          
-onclick="filterCategory('satin')">  <div class="category-icon">          
-    👙          
-</div>        <h3>          
-    ست سه تیکه ساتن          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- شورت لامبادا -->      <button class="category-card"          
-onclick="filterCategory('lambada')">  <div class="category-icon">          
-    💗          
-</div>        <h3>          
-    شورت لامبادا          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- ست کاپدار -->      <button class="category-card"          
-onclick="filterCategory('kapdar')">  <div class="category-icon">          
-    🎀          
-</div>        <h3>          
-    ست کاپدار          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- شورت فانتزی -->      <button class="category-card"          
-onclick="filterCategory('fantasy')">  <div class="category-icon">          
-    💕          
-</div>        <h3>          
-    شورت فانتزی          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- سوتین تک -->      <button class="category-card"          
-onclick="filterCategory('bra')">  <div class="category-icon">          
-    👙          
-</div>        <h3>          
-    سوتین تک          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- ست تورگاز -->      <button class="category-card"          
-onclick="filterCategory('torgaz')">  <div class="category-icon">          
-    🌸          
-</div>        <h3>          
-    ست تورگاز          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- لباسخواب -->      <button class="category-card"          
-onclick="filterCategory('sleepwear')">  <div class="category-icon">          
-    🌙          
-</div>        <h3>          
-    لباسخواب          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>      <!-- نیم تنه -->      <button class="category-card"          
-onclick="filterCategory('croptop')">  <div class="category-icon">          
-    ✨          
-</div>        <h3>          
-    نیم تنه          
-</h3>        <small>          
-    مشاهده محصولات          
-</small>  </button>  </div>  </section>  <div class="products" id="products">  <!-- محصول اول -->  <div class="product sets sale"          
-data-category="gipouri"          
-data-price="350000">                             
-<div class="badge">                                                                      
-🔥 12٪ تخفیف ویژه                                                                      
-</div>  <img                                                                    
-src="product.jpg"                                                                    
-alt="ست لباس زیر زنانه"  >   <button                                                                
-class="favorite"                                                                
-onclick="toggleFavorite(this)"  >   ♡                                                            
-</button>  <button                                                          
-class="details-btn"                                                          
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات                                                      
-</button>  <h2>                                                                      
-ست لباس زیر زنانه                                                                      
-</h2>  <label>                                                                      
-سایز:                                                                      
-</label>  <select class="size">  <option>کوچک (S)</option>                                                                      
-<option>متوسط (M)</option>                                                                      
-<option>بزرگ (L)</option>                                                                      
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                                                                      
-رنگ:                                                                      
-</label>  <select class="color">  <option>مشکی</option>                                                                      
-<option>سفید</option>                                                                      
-<option>قرمز</option>                                                                      
-<option>صورتی</option>  </select>  <p>  <del>                                                                      
-400,000 تومان                                                                      
-</del>  <strong>                                                                      
-350,000 تومان                                                                      
-</strong>  </p>  <button                                                                    
-onclick="buyproductWithOptions(this,'ست لباس زیر زنانه',350000)"  >   خرید محصول                                                                
-</button>  </div>  <!-- محصول دوم -->            
-<div class="product sets"          
-data-category="satin"          
-data-price="520000">          
-<img                                                                    
-src="product3.jpg"                                                                    
-alt="ست شیک زنانه"  >   <button                                                                
-class="favorite"                                                                
-onclick="toggleFavorite(this)"  >   ♡                                                            
-</button>  <button                                                          
-class="details-btn"                                                          
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات                                                      
-</button>  <h2>                                                                      
-ست شیک زنانه                                                                      
-</h2>  <label>                                                                      
-سایز:                                                                      
-</label>  <select class="size">  <option>کوچک (S)</option>                                                                      
-<option>متوسط (M)</option>                                                                      
-<option>بزرگ (L)</option>                                                                      
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                                                                      
-رنگ:                                                                      
-</label>  <select class="color">  <option>مشکی</option>                                                                      
-<option>سفید</option>                                                                      
-<option>قرمز</option>                                                                      
-<option>صورتی</option>  </select>  <p>  <strong>                                                                      
-520,000 تومان                                                                      
-</strong>  </p>  <button                                                                    
-onclick="buyproductWithOptions(this,'ست شیک زنانه',520000)"  >   خرید محصول                                                                
-</button>  </div>  <!-- محصول سوم -->            
-<div class="product sets new"          
-data-category="bra"          
-data-price="450000">          
-<img                                                                    
-src="product2.jpg"                                                                    
-alt="ست جدید زنانه"  >   <button                                                                
-class="favorite"                                                                
-onclick="toggleFavorite(this)"  >   ♡                                                            
-</button>  <button                                                          
-class="details-btn"                                                          
-onclick="showProductDetails(this)"  >   👁️ مشاهده جزئیات                                                      
-</button>  <h2>                                                                      
-ست جدید زنانه                                                                      
-</h2>  <label>                                                                      
-سایز:                                                                      
-</label>  <select class="size">  <option>کوچک (S)</option>                                                                      
-<option>متوسط (M)</option>                                                                      
-<option>بزرگ (L)</option>                                                                      
-<option>خیلی بزرگ (XL)</option>  </select>  <br><br>  <label>                                                                      
-رنگ:                                                                      
-</label>  <select class="color">  <option>مشکی</option>                                                                      
-<option>سفید</option>                                                                      
-<option>قرمز</option>                                                                      
-<option>صورتی</option>  </select>  <p>  <strong>                                                                      
-450,000 تومان                                                                      
-</strong>  </p>  <button                                                                    
-onclick="buyproductWithOptions(this,'ست جدید زنانه',450000)"  >   خرید محصول                                                                
-</button>  </div>  </div>  <!-- سبد خرید -->  <div class="cart-box" id="cartBox">  <h2>                                                                      
-🛒 سبد خرید                                                                      
-</h2>  <div id="cartItems"></div>  <div class="cart-total">  مبلغ کل:  <span id="cartTotal">                                                                      
-0 تومان                                                                      
-</span>  </div>  <button onclick="clearCart()">                                                                      
-🗑️ خالی کردن سبد                                                                      
-</button>  </div>  <!-- سفارش -->  <div class="customer-box">  <h2>                                                                      
-اطلاعات مشتری                                                                      
-</h2>  <input                                                                    
-type="text"                                                                    
-id="customerName"                                                                    
-placeholder="نام و نام خانوادگی"  >   <br><br>  <input                                                              
-type="tel"                                                              
-id="customerPhone"                                                              
-placeholder="شماره موبایل"  >   <br><br>  <textarea                                                                      
-id="customerAddress"                                                                      
-placeholder="آدرس کامل"                                                                      
-></textarea>  <br><br>  <h3>      روش پرداخت  </h3>  <label>  <input        type="radio"  name="payment"  value="online"                                                        
-onchange="showPaymentBox()"  >   پرداخت آنلاین  </label>  <br><br>  <label>  <input                                                      
-type="radio"                                                      
-name="payment"                                                      
-value="cash"                                                      
-onchange="hidePaymentBox()"  >   پرداخت در محل  </label>  <br><br>  <button onclick="submitOrder()">                                                                      
-ثبت سفارش                                                                      
-</button>  <div                                                                      
-id="paymentBox"                                                                      
-style="display:none;"                                                                      
->  <h3>                                                                      
-💳 پرداخت آنلاین                                                                      
-</h3>  <p>                                                                      
-مبلغ قابل پرداخت:                                                                      
-</p>  <strong id="paymentAmount">                                                                      
-</strong>  <br><br>  <button onclick="payNow()">                                                                      
-پرداخت                                                                      
-</button>  </div>  </div>  <!-- نتیجه سفارش -->  <div                                                                      
-class="order-success"                                                                      
-id="orderSuccess"                                                                      
->  <h2>                                                                      
-✅ سفارش شما ثبت شد                                                                      
-</h2>  <p id="successText"></p>  </div>  <!-- تماس -->  <div class="contact-box" id="contact">  <h2>                                                                      
-📞 تماس با ما                                                                      
-</h2>  <p>                                                                      
-برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸                                                                      
-</p>  <p>                                                                      
-📱 تلفن: 09917895945                                                                      
-</p>  <p>                                                                      
-💬 واتساپ: پاسخگویی به سفارش‌ها                                                                      
-</p>  <a                                                                    
-href="https://api.whatsapp.com/send?phone=989917895945"                                                                    
-target="_blank"                                                                    
-style="                                                                    
-display:inline-block;                                                                    
-padding:12px 25px;                                                                    
-font-size:18px;                                                                    
-background:#d6336c;                                                                    
-color:white;                                                                    
-text-decoration:none;                                                                    
-border-radius:10px;                                                                    
-"  >   💬 پیام در واتساپ                                                                
-</a>  </div>  <!-- پنجره جزئیات -->  <div                                                                      
-class="product-modal"                                                                      
-id="productModal"                                                                      
->  <div class="product-modal-content">  <button                                                                    
-class="close-modal"                                                                    
-onclick="closeProductDetails()"  >   ×                                                                
-</button>  <img                                                              
-id="modalImage"                                                              
-src=""                                                              
-alt="محصول"  >   <h2 id="modalTitle"></h2>  <p id="modalDescription"></p>  <div                                                                      
-class="modal-price"                                                                      
-id="modalPrice"                                                                      
-></div>  <br>  <label>                                                                      
-سایز:                                                                      
-</label>  <select                                                                    
-class="modal-select"                                                                    
-id="modalSize"  >   <option>کوچک (S)</option>                                                                      
-<option>متوسط (M)</option>                                                                      
-<option>بزرگ (L)</option>                                                                      
-<option>خیلی بزرگ (XL)</option>  </select>  <br>  <label>                                                                      
-رنگ:                                                                      
-</label>  <select                                                                    
-class="modal-select"                                                                    
-id="modalColor"  >   <option>مشکی</option>                                                                      
-<option>سفید</option>                                                                      
-<option>قرمز</option>                                                                      
-<option>صورتی</option>  </select>  <br><br>  <button onclick="addModalProductToCart()">                                                                      
-🛒 افزودن به سبد خرید                                                                      
-</button>  </div>  </div>                                                        
-<!-- ===== PROFESSIONAL FOOTER ===== -->  <footer class="site-footer">  <div class="footer-content">    <div class="footer-box">      <h3>🌸 mimi shop</h3>        <p>                                                      
-    فروشگاه آنلاین لباس زیر زنانه                                                      
-    با انتخابی زیبا، کیفیت مناسب                                                      
-    و تجربه خرید آسان 💕                                                      
-</p>  </div>      <div class="footer-box">      <h3>🔗 دسترسی سریع</h3>        <div class="footer-links">        <a href="#">                                                      
-    🏠 خانه                                                      
-</a>          <a href="#products">                                                      
-    🛍️ محصولات                                                      
-</a>          <a href="#cartBox">                                                      
-    🛒 سبد خرید                                                      
-</a>          <a href="#contact">                                                      
-    📞 تماس با ما                                                      
-</a>  </div>  </div>      <div class="footer-box">      <h3>📞 ارتباط با ما</h3>        <p>                                                      
-    📱 09917895945                                                      
-</p>        <p>                                                      
-    💬 پاسخگویی در واتساپ                                                      
-</p>        <a                                              
-class="footer-whatsapp"                                              
-href="https://api.whatsapp.com/send?phone=989917895945"                                              
-target="_blank"  >   💬 پیام در واتساپ  </a>  </div>  </div>      
-<!-- ویژگی‌های فروشگاه -->      
-<div class="footer-features">      
-<div class="footer-feature">        
-<strong>                                        
-🚚 ارسال سریع                                        
-</strong>        <span>                                        
-ارسال سفارش‌ها در سریع‌ترین زمان                                        
-</span>  </div>      <div class="footer-feature">      <strong>                                        
-🔒 پرداخت امن                                        
-</strong>        <span>                                        
-پرداخت امن پس از اتصال درگاه                                        
-</span>  </div>      <div class="footer-feature">      <strong>                                        
-💕 تضمین کیفیت                                        
-</strong>        <span>                                        
-انتخاب محصولات با کیفیت                                        
-</span>  </div>  </div>    <div class="footer-bottom">    © 2026 mimi shop                                        
-— تمامی حقوق محفوظ است 🌸  </div>  </footer>  <script>      /* =========================                                  
-اطلاعات اصلی                                  
-========================= */          
-let cart =                                
-JSON.parse(localStorage.getItem("cart")) || [];  let favorites =                                
-JSON.parse(localStorage.getItem("favorites")) || [];   let totalPrice = 0;                              
-let selectedModalProduct = null;                              
-let selectedCategory = "all";                              
-/* =========================                              
-اسکرول                              
-========================= */          
-function scrollToProducts(){  document                            
-.getElementById("products")                            
-.scrollIntoView({                            
-behavior:"smooth"                            
-});  }  function scrollToCart(){  document                            
-.getElementById("cartBox")                            
-.scrollIntoView({                            
-behavior:"smooth"                            
-});  }  /* =========================                        
-افزودن محصول                        
-========================= */          
-function buyproductWithOptions(                      
-button,                      
-name,                      
-price                      
-){  let productBox =                    
-button.parentElement;  let size =                  
-productBox.querySelector(".size").value;  let color =                
-productBox.querySelector(".color").value;  let image =              
-productBox.querySelector("img").src;  let productName =            
-name +            
-" | سایز: " +            
-size +            
-" | رنگ: " +            
-color;  let product =          
-cart.find(          
-item => item.name === productName          
-);  if(product){  product.quantity++;  }else{  cart.push({  name:productName,
-
-price:price,
-
-quantity:1,
+<header>  <div class="logo">                                                            
+    🌸 mimi shop                                                            
+</div>    <button class="menu-toggle" onclick="toggleMenu()">                                                            
+    ☰                                                            
+</button>    <nav>                                                            
+    <a href="#">🏠 خانه</a>                                                            
+    <a href="#products">🛍️ محصولات</a>                                                            
+    <a href="#cartBox">🛒 سبد خرید</a>                                                            
+    <a href="#contact">📞 تماس با ما</a>                                                            
+</nav>                                        
+</header>                                   
+<!-- ===== BANNER SLIDER ===== -->   <div class="banner-slider">                                  
+<img id="bannerImage" src="banner1.jpg" alt="تبلیغ mimi shop">                                
+</div>                                  
+<section class="hero">                                        
+<div class="hero-content">                                        
+<div class="hero-text">                                        
+<span class="hero-badge">                                                                          
+🌸 فروشگاه آنلاین لباس زیر زنانه                                                                          
+</span>  <h1>                                                                          
+به دنیای زیبای                                                                          
+<span>mimi shop</span>                                                                          
+خوش آمدید 💕                                                                          
+</h1>  <p>                                                                          
+جدیدترین مدل‌های لباس زیر زنانه                                                                          
+با کیفیت عالی و طراحی زیبا                                                                          
+</p>  <div class="hero-buttons">  <button onclick="scrollToProducts()">                                                                          
+🛍️ مشاهده محصولات                                                                          
+</button>  <button class="hero-cart" onclick="scrollToCart()">                                                                          
+🛒 سبد خرید                                                                          
+</button>  </div>  </div>    </div>                                                                      
+</section>                                                      
+<!-- ===== SPECIAL OFFER ===== -->  <section class="special-offer">    <h2>🔥 فروش ویژه mimi shop</h2>    <p>                                                                    
+    فرصت محدود برای خرید محصولات منتخب با تخفیف ویژه 💕                                                                    
+</p>    <div class="countdown" id="countdown">    <div class="time-box">                                                                    
+    <strong id="days">00</strong>                                                                    
+    <span>روز</span>                                                                    
+</div>      <div class="time-box">                                                                    
+    <strong id="hours">00</strong>                                                                    
+    <span>ساعت</span>                                                                    
+</div>      <div class="time-box">                                                                    
+    <strong id="minutes">00</strong>                                                                    
+    <span>دقیقه</span>                                                                    
+</div>      <div class="time-box">                                                                    
+    <strong id="seconds">00</strong>                                                                    
+    <span>ثانیه</span>                                                                    
+</div>  </div>  </section>                                                                 
+  <!-- ===== SHOP STATUS ===== -->  <div class="shop-status">  <div>                                                                
+    🛒                                                                
+    <strong id="cart">0</strong>                                                                
+    <span>محصول در سبد</span>                                                                
+</div>    <div>                                                                
+    💰                                                                
+    <strong id="total">0 تومان</strong>                                                                
+    <span>مبلغ کل</span>                                                                
+</div>  </div>                                                                   
+<div class="search-box">  <input        
+type="text"        
+id="searchInput"        
+placeholder="🔍 جستجوی محصول..."        
+oninput="searchProducts()"  >   <select id="sortProducts" onchange="sortProducts()">          
+<option value="default">مرتب‌سازی محصولات</option>          
+<option value="cheap">ارزان‌ترین</option>          
+<option value="expensive">گران‌ترین</option>          
+</select>  </div>                   
+<!-- ===== TRUST FEATURES ===== -->  <section class="trust-section">          
+<div class="trust-card">            
+<div class="trust-icon">                                                        
+    🚚                                                        
+</div>      <h3>                                                        
+    ارسال سریع                                                        
+</h3>      <p>                                                        
+    سفارش شما با سرعت و دقت آماده ارسال می‌شود.                                                        
+</p>  </div>    <div class="trust-card">    <div class="trust-icon">                                                        
+    💎                                                        
+</div>      <h3>                                                        
+    کیفیت محصولات                                                        
+</h3>      <p>                                                        
+    انتخاب محصولات با کیفیت و طراحی زیبا.                                                        
+</p>  </div>    <div class="trust-card">    <div class="trust-icon">                                                        
+    💬                                                        
+</div>      <h3>                                                        
+    پشتیبانی                                                        
+</h3>      <p>                                                        
+    برای سوالات و سفارش‌ها از طریق واتساپ با ما در ارتباط باشید.                                                        
+</p>  </div>  </section>                                                        
+<div class="products-section-title">  <h2>                                                                          
+🛍️ محصولات mimi shop                                                                          
+</h2>  <p>                                                                          
+جدیدترین مدل‌ها را ببینید و محصول مورد علاقه‌تان را انتخاب کنید 💕                                                                          
+</p>  </div>    <!-- ===== دسته بندی محصولات ===== -->  <section class="categories-section">  <div class="categories-heading">    <div class="cat-title">              
+    <span>🌸</span>              
+    <h2>دسته بندی محصولات</h2>              
+</div>      <p>              
+    دسته مورد علاقه‌ات رو انتخاب کن و مدل‌های موجود رو ببین 💕              
+</p>  </div>    <div class="categories-grid">    <!-- ست گیپوری -->      <button class="category-card"              
+onclick="filterCategory('gipouri')">  <div class="category-icon">              
+    🎀              
+</div>        <h3>              
+    ست گیپوری              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- ست سه تیکه ساتن -->      <button class="category-card"              
+onclick="filterCategory('satin')">  <div class="category-icon">              
+    👙              
+</div>        <h3>              
+    ست سه تیکه ساتن              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- شورت لامبادا -->      <button class="category-card"              
+onclick="filterCategory('lambada')">  <div class="category-icon">              
+    💗              
+</div>        <h3>              
+    شورت لامبادا              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- ست کاپدار -->      <button class="category-card"              
+onclick="filterCategory('kapdar')">  <div class="category-icon">              
+    🎀              
+</div>        <h3>              
+    ست کاپدار              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- شورت فانتزی -->      <button class="category-card"              
+onclick="filterCategory('fantasy')">  <div class="category-icon">              
+    💕              
+</div>        <h3>              
+    شورت فانتزی              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- سوتین تک -->      <button class="category-card"              
+onclick="filterCategory('bra')">  <div class="category-icon">              
+    👙              
+</div>        <h3>              
+    سوتین تک              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- ست تورگاز -->      <button class="category-card"              
+onclick="filterCategory('torgaz')">  <div class="category-icon">              
+    🌸              
+</div>        <h3>              
+    ست تورگاز              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- لباسخواب -->      <button class="category-card"              
+onclick="filterCategory('sleepwear')">  <div class="category-icon">              
+    🌙              
+</div>        <h3>              
+    لباسخواب              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>      <!-- نیم تنه -->      <button class="category-card"              
+onclick="filterCategory('croptop')">  <div class="category-icon">              
+    ✨              
+</div>        <h3>              
+    نیم تنه              
+</h3>        <small>              
+    مشاهده محصولات              
+</small>  </button>  </div>  </section>    <div class="products" id="products">  
+</div>  
+<!-- سبد خرید -->    <div class="cart-box" id="cartBox">  <h2>                                                                          
+🛒 سبد خرید                                                                          
+</h2>  <div id="cartItems"></div>  <div class="cart-total">  مبلغ کل:  <span id="cartTotal">                                                                          
+0 تومان                                                                          
+</span>  </div>  <button onclick="clearCart()">                                                                          
+🗑️ خالی کردن سبد                                                                          
+</button>  </div>  <!-- سفارش -->  <div class="customer-box">  <h2>                                                                          
+اطلاعات مشتری                                                                          
+</h2>  <input                                                                        
+type="text"                                                                        
+id="customerName"                                                                        
+placeholder="نام و نام خانوادگی"  >   <br><br>  <input                                                                  
+type="tel"                                                                  
+id="customerPhone"                                                                  
+placeholder="شماره موبایل"  >   <br><br>  <textarea                                                                          
+id="customerAddress"                                                                          
+placeholder="آدرس کامل"                                                                          
+></textarea>  <br><br>  <h3>      روش پرداخت  </h3>  <label>  <input        type="radio"  name="payment"  value="online"                                                            
+onchange="showPaymentBox()"  >   پرداخت آنلاین  </label>  <br><br>  <label>  <input                                                          
+type="radio"                                                          
+name="payment"                                                          
+value="cash"                                                          
+onchange="hidePaymentBox()"  >   پرداخت در محل  </label>  <br><br>  <button onclick="submitOrder()">                                                                          
+ثبت سفارش                                                                          
+</button>  <div                                                                          
+id="paymentBox"                                                                          
+style="display:none;"                                                                          
+>  <h3>                                                                          
+💳 پرداخت آنلاین                                                                          
+</h3>  <p>                                                                          
+مبلغ قابل پرداخت:                                                                          
+</p>  <strong id="paymentAmount">                                                                          
+</strong>  <br><br>  <button onclick="payNow()">                                                                          
+پرداخت                                                                          
+</button>  </div>  </div>  <!-- نتیجه سفارش -->  <div                                                                          
+class="order-success"                                                                          
+id="orderSuccess"                                                                          
+>  <h2>                                                                          
+✅ سفارش شما ثبت شد                                                                          
+</h2>  <p id="successText"></p>  </div>  <!-- تماس -->  <div class="contact-box" id="contact">  <h2>                                                                          
+📞 تماس با ما                                                                          
+</h2>  <p>                                                                          
+برای سفارش یا سوال درباره محصولات، با ما در ارتباط باشید 🌸                                                                          
+</p>  <p>                                                                          
+📱 تلفن: 09917895945                                                                          
+</p>  <p>                                                                          
+💬 واتساپ: پاسخگویی به سفارش‌ها                                                                          
+</p>  <a                                                                        
+href="https://api.whatsapp.com/send?phone=989917895945"                                                                        
+target="_blank"                                                                        
+style="                                                                        
+display:inline-block;                                                                        
+padding:12px 25px;                                                                        
+font-size:18px;                                                                        
+background:#d6336c;                                                                        
+color:white;                                                                        
+text-decoration:none;                                                                        
+border-radius:10px;                                                                        
+"  >   💬 پیام در واتساپ                                                                    
+</a>  </div>  <!-- پنجره جزئیات -->  <div                                                                          
+class="product-modal"                                                                          
+id="productModal"                                                                          
+>  <div class="product-modal-content">  <button                                                                        
+class="close-modal"                                                                        
+onclick="closeProductDetails()"  >   ×                                                                    
+</button>  <img                                                                  
+id="modalImage"                                                                  
+src=""                                                                  
+alt="محصول"  >   <h2 id="modalTitle"></h2>  <p id="modalDescription"></p>  <div                                                                          
+class="modal-price"                                                                          
+id="modalPrice"                                                                          
+></div>  <br>  <label>                                                                          
+سایز:                                                                          
+</label>  <select                                                                        
+class="modal-select"                                                                        
+id="modalSize"  >   <option>کوچک (S)</option>                                                                          
+<option>متوسط (M)</option>                                                                          
+<option>بزرگ (L)</option>                                                                          
+<option>خیلی بزرگ (XL)</option>  </select>  <br>  <label>                                                                          
+رنگ:                                                                          
+</label>  <select                                                                        
+class="modal-select"                                                                        
+id="modalColor"  >   <option>مشکی</option>                                                                          
+<option>سفید</option>                                                                          
+<option>قرمز</option>                                                                          
+<option>صورتی</option>  </select>  <br><br>  <button onclick="addModalProductToCart()">                                                                          
+🛒 افزودن به سبد خرید                                                                          
+</button>  </div>  </div>                                                            
+<!-- ===== PROFESSIONAL FOOTER ===== -->  <footer class="site-footer">  <div class="footer-content">    <div class="footer-box">      <h3>🌸 mimi shop</h3>        <p>                                                          
+    فروشگاه آنلاین لباس زیر زنانه                                                          
+    با انتخابی زیبا، کیفیت مناسب                                                          
+    و تجربه خرید آسان 💕                                                          
+</p>  </div>      <div class="footer-box">      <h3>🔗 دسترسی سریع</h3>        <div class="footer-links">        <a href="#">                                                          
+    🏠 خانه                                                          
+</a>          <a href="#products">                                                          
+    🛍️ محصولات                                                          
+</a>          <a href="#cartBox">                                                          
+    🛒 سبد خرید                                                          
+</a>          <a href="#contact">                                                          
+    📞 تماس با ما                                                          
+</a>  </div>  </div>      <div class="footer-box">      <h3>📞 ارتباط با ما</h3>        <p>                                                          
+    📱 09917895945                                                          
+</p>        <p>                                                          
+    💬 پاسخگویی در واتساپ                                                          
+</p>        <a                                                  
+class="footer-whatsapp"                                                  
+href="https://api.whatsapp.com/send?phone=989917895945"                                                  
+target="_blank"  >   💬 پیام در واتساپ  </a>  </div>  </div>          
+<!-- ویژگی‌های فروشگاه -->          
+<div class="footer-features">          
+<div class="footer-feature">            
+<strong>                                            
+🚚 ارسال سریع                                            
+</strong>        <span>                                            
+ارسال سفارش‌ها در سریع‌ترین زمان                                            
+</span>  </div>      <div class="footer-feature">      <strong>                                            
+🔒 پرداخت امن                                            
+</strong>        <span>                                            
+پرداخت امن پس از اتصال درگاه                                            
+</span>  </div>      <div class="footer-feature">      <strong>                                            
+💕 تضمین کیفیت                                            
+</strong>        <span>                                            
+انتخاب محصولات با کیفیت                                            
+</span>  </div>  </div>    <div class="footer-bottom">    © 2026 mimi shop                                            
+— تمامی حقوق محفوظ است 🌸  </div>  </footer>  <script>      /* =========================                                      
+اطلاعات اصلی                                      
+========================= */              
+let cart =                                    
+JSON.parse(localStorage.getItem("cart")) || [];  let favorites =                                    
+JSON.parse(localStorage.getItem("favorites")) || [];   let totalPrice = 0;                                  
+let selectedModalProduct = null;                                  
+let selectedCategory = "all";                                  
+/* =========================                                  
+اسکرول                                  
+========================= */              
+function scrollToProducts(){  document                                
+.getElementById("products")                                
+.scrollIntoView({                                
+behavior:"smooth"                                
+});  }  function scrollToCart(){  document                                
+.getElementById("cartBox")                                
+.scrollIntoView({                                
+behavior:"smooth"                                
+});  }  /* =========================                            
+افزودن محصول                            
+========================= */              
+function buyproductWithOptions(                          
+button,                          
+name,                          
+price                          
+){  let productBox =                        
+button.parentElement;  let size =                      
+productBox.querySelector(".size").value;  let color =                    
+productBox.querySelector(".color").value;  let image =                  
+productBox.querySelector("img").src;  let productName =                
+name +                
+" | سایز: " +                
+size +                
+" | رنگ: " +                
+color;  let product =              
+cart.find(              
+item => item.name === productName              
+);  if(product){  product.quantity++;  }else{  cart.push({  name:productName,  price:price,  quantity:1,
 
 image:image
 
@@ -2781,127 +2689,232 @@ JSON.parse(
 localStorage.getItem("mimiProducts")
 );
 
-if(!savedProducts){
+const productsBox =
+document.getElementById("products");
+
+if(!productsBox){
 return;
 }
 
-const productCards =
-document.querySelectorAll(".product");
+/* اگر محصولی در پنل ذخیره نشده */
+if(!savedProducts || savedProducts.length === 0){
+
+productsBox.innerHTML =
+'<p class="no-result">هنوز محصولی ثبت نشده است 🌸</p>';
+
+return;
+
+}
+
+/* ساخت کارت‌ها */
+
+productsBox.innerHTML = "";
 
 savedProducts.forEach(
 function(product,index){
 
-const card =
-productCards[index];
-
-if(!card){
+if(
+!product ||
+!product.name ||
+!product.price
+){
 return;
 }
 
-/* شماره محصول */
-card.dataset.productIndex = index;
+const card =
+document.createElement("div");
 
-/* نام محصول */
+card.className =
+"product";
 
-const title =
-card.querySelector("h2");
+card.dataset.category =
+product.category || "";
 
-if(title){
+card.dataset.productIndex =
+index;
 
-title.innerText =
-product.name;
+card.dataset.basePrice =
+Number(product.price);
 
-}
+card.dataset.price =
+Number(product.price);
 
-/* عکس محصول */
+/* عکس */
 
 const image =
-card.querySelector("img");
-
-if(
-image &&
-product.image
-){
+document.createElement("img");
 
 image.src =
-product.image;
+product.image ||
+"product.jpg";
 
 image.alt =
 product.name;
 
-}
+card.appendChild(image);
 
-/* قیمت اصلی */
+/* علاقه مندی */
+
+const favorite =
+document.createElement("button");
+
+favorite.className =
+"favorite";
+
+favorite.innerText =
+"♡";
+
+favorite.onclick =
+function(){
+
+toggleFavorite(favorite);
+
+};
+
+card.appendChild(favorite);
+
+/* جزئیات */
+
+const details =
+document.createElement("button");
+
+details.className =
+"details-btn";
+
+details.innerText =
+"👁️ مشاهده جزئیات";
+
+details.onclick =
+function(){
+
+showProductDetails(details);
+
+};
+
+card.appendChild(details);
+
+/* نام */
+
+const title =
+document.createElement("h2");
+
+title.innerText =
+product.name;
+
+card.appendChild(title);
+
+/* سایز */
+
+const sizeLabel =
+document.createElement("label");
+
+sizeLabel.innerText =
+"سایز:";
+
+card.appendChild(sizeLabel);
+
+const size =
+document.createElement("select");
+
+size.className =
+"size";
+
+size.innerHTML = `
+
+<option>کوچک (S)</option>  
+<option>متوسط (M)</option>  
+<option>بزرگ (L)</option>  
+<option>خیلی بزرگ (XL)</option>  
+`;  card.appendChild(size);
+
+card.appendChild(
+document.createElement("br")
+);
+
+card.appendChild(
+document.createElement("br")
+);
+
+/* رنگ */
+
+const colorLabel =
+document.createElement("label");
+
+colorLabel.innerText =
+"رنگ:";
+
+card.appendChild(colorLabel);
+
+const color =
+document.createElement("select");
+
+color.className =
+"color";
+
+color.innerHTML = `
+
+<option>مشکی</option>  
+<option>سفید</option>  
+<option>قرمز</option>  
+<option>صورتی</option>  
+`;  card.appendChild(color);
+
+/* قیمت */
+
+const priceBox =
+document.createElement("p");
 
 const strong =
-card.querySelector("strong");
-
-if(strong){
+document.createElement("strong");
 
 strong.innerText =
 Number(product.price)
 .toLocaleString("fa-IR") +
 " تومان";
 
-}
+priceBox.appendChild(strong);
 
-/* قیمت اصلی برای تخفیف */
+card.appendChild(priceBox);
 
-card.dataset.basePrice =
-product.price;
-
-card.dataset.price =
-product.price;
-
-/* حذف قیمت قبلی پیش‌فرض */
-
-const oldPrice =
-card.querySelector("del");
-
-if(oldPrice){
-
-oldPrice.remove();
-
-}
-
-/* حذف تخفیف قبلی */
-
-const oldBadge =
-card.querySelector(".badge");
-
-if(oldBadge){
-
-oldBadge.remove();
-
-}
-
-card.classList.remove("sale");
-
-/* دکمه خرید */
+/* خرید */
 
 const buyButton =
-card.querySelector(
-'button[onclick*="buyproductWithOptions"]'
+document.createElement("button");
+
+buyButton.innerText =
+"خرید محصول";
+
+buyButton.onclick =
+function(){
+
+buyproductWithOptions(
+buyButton,
+product.name,
+Number(card.dataset.price)
 );
 
-if(buyButton){
+};
 
-buyButton.setAttribute(
-"onclick",
-"buyproductWithOptions(this," +
-JSON.stringify(product.name) +
-"," +
-product.price +
-")"
-);
+card.appendChild(buyButton);
+
+/* اضافه کردن کارت */
+
+productsBox.appendChild(card);
 
 }
-
-}
-
 );
+
+/* اعمال تخفیف */
 
 applyAdminDiscount();
+
+/* علاقه مندی‌ها */
+
+loadFavorites();
+
+/* فیلتر */
+
+applyProductFilters();
 
 }
 
@@ -2919,15 +2932,11 @@ localStorage.getItem("mimiDiscount")
 const cards =
 document.querySelectorAll(".product");
 
-/* اگر تخفیفی وجود ندارد */
-
 if(!savedDiscount){
-
 return;
-
 }
 
-/* اگر تخفیف تمام شده */
+/* بررسی پایان تخفیف */
 
 if(
 Date.now() >=
@@ -2940,31 +2949,24 @@ return;
 
 }
 
-/* بررسی محصولات */
+/* بررسی همه محصولات */
 
 cards.forEach(
 function(card){
 
-const title =
-card.querySelector("h2");
-
-if(!title){
-return;
-}
-
-const productName =
-title.innerText.trim();
-
-/* فقط محصول انتخاب شده */
+const category =
+card.dataset.category;
 
 if(
-productName !==
+category !==
 savedDiscount.product
 ){
 
 return;
 
 }
+
+/* قیمت پایه */
 
 const basePrice =
 Number(
@@ -2976,7 +2978,16 @@ Number(
 savedDiscount.percent
 );
 
-/* محاسبه قیمت جدید */
+if(
+!basePrice ||
+!percent
+){
+
+return;
+
+}
+
+/* قیمت جدید */
 
 const newPrice =
 Math.round(
@@ -2998,17 +3009,15 @@ priceBox &&
 strong
 ){
 
-/* قیمت قبلی */
-
-const del =
+const oldPrice =
 document.createElement("del");
 
-del.innerText =
+oldPrice.innerText =
 basePrice.toLocaleString("fa-IR") +
 " تومان";
 
 priceBox.insertBefore(
-del,
+oldPrice,
 strong
 );
 
@@ -3018,7 +3027,7 @@ newPrice.toLocaleString("fa-IR") +
 
 }
 
-/* قیمت جدید */
+/* قیمت جدید برای خرید */
 
 card.dataset.price =
 newPrice;
@@ -3027,7 +3036,7 @@ newPrice;
 
 card.classList.add("sale");
 
-/* برچسب تخفیف */
+/* برچسب */
 
 const badge =
 document.createElement("div");
@@ -3041,26 +3050,6 @@ percent +
 "٪ تخفیف ویژه";
 
 card.prepend(badge);
-
-/* دکمه خرید */
-
-const buyButton =
-card.querySelector(
-'button[onclick*="buyproductWithOptions"]'
-);
-
-if(buyButton){
-
-buyButton.setAttribute(
-"onclick",
-"buyproductWithOptions(this," +
-JSON.stringify(productName) +
-"," +
-newPrice +
-")"
-);
-
-}
 
 }
 
